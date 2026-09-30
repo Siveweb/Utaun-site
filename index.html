@@ -316,6 +316,11 @@ margin-bottom: 1.5rem;
 text-align: center;
 display: none;
 }
+.sister-site-box img {
+max-width: 100%;
+height: auto;
+border: 1px solid #09A3F2;
+}
 footer {
 border-top: 1px solid #09A3F2;
 padding-top: 1rem;
@@ -478,10 +483,14 @@ A:\UTAUN\WELCOME.HTM
 </ul>
 </div>
 </section>
+
 <!-- 日本語表示のときだけ表示される姉妹サイトリンク -->
 <div class="sister-site-box" id="sisterSiteBox">
 <a href="https://Siveweb.github.io/lalala/index.html" target="_blank">
-<img src="Image/無題277_20260924053913.png" alt="姉妹サイトSive"
+<img src="Image/無題277_20260924053913.png" alt="姉妹サイトSive">
+</a>
+</div>
+
 <div style="text-align: center; margin: 2rem 0 1rem 0;">
     <a href="https://github.com" class="dl-btn" target="_blank" rel="noopener noreferrer" id="github-btn" data-i18n="btn_github" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
         <svg height="16" width="16" viewBox="0 0 16 16" style="fill: currentColor; vertical-align: middle;"><path d="M8 0c4.42 0 8 3.58 8 8a8 8 0 0 1-5.38 7.59c-.4.07-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82A7.64 7.64 0 0 0 8 3c-.68 0-1.36.09-2 .28-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
@@ -530,7 +539,7 @@ terms_body_3: "※オープンソースにした場合は利用規約が変わ�
 terms_body_4: "【生成物について】",
 terms_body_5: "（音源・wav・icon.jpg / icon.bmp・<code>oto.ini</code> など）<br>利用規約は、あなた（配布者）が自由に設定できます。<code>readme.txt</code> にお好きな規約を書いてください。",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-  btn_github: "View on GitHub"
+btn_github: "View on Github"
 },
 en: {
 title: "Utaun - CV Voicebank Generator for Windows",
@@ -556,7 +565,7 @@ step_1: "Download your preferred 'Installer' or 'ZIP' version.",
 step_2_installer: "<strong>[For Installer version]</strong> Launch the installer and follow the on-screen instructions.",
 step_2_zip: "<strong>[For ZIP version]</strong> Place the '子音部・濁音部フォルダ' and <code>oto.ini</code> directly inside your 'Documents' folder.",
 step_3: "Launch Utaun and follow the on-screen instructions to create your voicebank.",
-step4: "Choose between ZIP output or direct folder export to UTAU and OpenUTAU.",
+step_4: "Choose between ZIP output or direct folder export to UTAU and OpenUTAU.",
 step_4_note: "* Auto-update features will be available in future versions.",
 terms_title: "Terms of Use",
 terms_body_1: "[About Utaun Core]",
@@ -566,7 +575,7 @@ terms_body_3: "* Terms of use may change if the software becomes open-source.",
 terms_body_4: "[About Generated Outputs]",
 terms_body_5: "(Voicebanks, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>You (the distributor) are free to set your own terms of use in <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-  btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 ko: {
 title: "Utaun - Windows용 CV 음원 생성 소프트웨어",
@@ -602,7 +611,7 @@ terms_body_3: "※ 오픈소스화될 경우 이용 약관이 변경될 수 있�
 terms_body_4: "[생산물 정보]",
 terms_body_5: "(음원, wav, icon.jpg / icon.bmp, <code>oto.ini</code> 등)<br>이용 약관은 귀하(배포자)가 자유롭게 설정할 수 있습니다. <code>readme.txt</code>에 원하는 약관을 작성해 주세요.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 "zh-cn": {
 title: "Utaun - Windows CV 语音库生成软件",
@@ -644,7 +653,7 @@ m_2: "<strong>文档要求：</strong> 必须随附官方 README（或其翻译�
 m_3: "<strong>保持原样：</strong> 禁止修改、编辑、改造或反编译程序。仅可分发来自 GitHub 的原始文件。",
 m_4: "<strong>禁止商用：</strong> 严禁用于任何营利性目的。",
 m_5: "<strong>报告义务：</strong> 开始分发后，请通过电子邮件（0329.mth@gmail.com）向我们报告。",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 "zh-tw": {
 title: "Utaun - Windows 專用 CV 語音庫生成軟體",
@@ -654,7 +663,7 @@ dl_title: "下載 Utaun",
 btn_zip: "下載 ZIP 版",
 btn_installer: "下載安裝程式版",
 btn_readme: "下載 README",
-badgePlatform: "僅限 Windows",
+badge_platform: "僅限 Windows",
 about_title: "什麼是 Utaun？",
 about_text: "僅透過完全無生命的複合正弦波建模（CSM語音合成）為 UTAU 生成 CV 語音庫的 Windows 軟體。",
 adachi_box: '<strong>💡 關於與<a href="https://mechanicalgirl.jp/adachi-rei/" target="_blank" style="color: #026ca7; text-decoration: underline;">足立レイ</a>相同的 CSM 語音合成方法</strong><br>這是一種用波形成分代替人聲，從機器或無生命素材中創造歌聲的語音合成機制。',
@@ -680,7 +689,7 @@ terms_body_3: "※若開源，使用條款可能會有所變更。",
 terms_body_4: "【關於生成物】",
 terms_body_5: "（音源、wav、icon.jpg / icon.bmp、<code>oto.ini</code> 等）<br>使用條款可由您（發布者）自由設定。請在 <code>readme.txt</code> 中寫下您喜歡的條款。",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 "zh-hk": {
 title: "Utaun - Windows 專用 CV 語音庫生成軟件",
@@ -722,7 +731,7 @@ m_2: "<strong>文檔要求：</strong> 必須隨附官方 README（或其翻譯�
 m_3: "<strong>保持原樣：</strong> 禁止修改、編輯、改造或反編譯程序。僅可分發來自 GitHub 的原始文件。",
 m_4: "<strong>禁止商用：</strong> 嚴禁用於任何營利性目的。",
 m_5: "<strong>報告義務：</strong> 開始分發後，請透過電子郵件（0329.mth@gmail.com）向我們報告。",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 ru: {
 title: "Utaun - Генератор голосовых банков CV для Windows",
@@ -764,7 +773,7 @@ m_2: "<strong>Документация:</strong> Обязательно прил
 m_3: "<strong>Оригинальные файлы:</strong> Запрещено модифицировать, редактировать, переделывать или декомпилировать программу.",
 m_4: "<strong>Коммерческое использование запрещено.</strong>",
 m_5: "<strong>Обязательство по отчетности:</strong> Сообщите нам по электронной почте (0329.mth@gmail.com).",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 pt: {
 title: "Utaun - Gerador de Banco de Voz CV para Windows",
@@ -800,7 +809,7 @@ terms_body_3: "* Os termos de uso podem mudar caso o software se torne de códig
 terms_body_4: "[Sobre as Saídas Geradas]",
 terms_body_5: "(Bancos de voz, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>Você (o distribuidor) é livre para definir seus próprios termos de uso no arquivo <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 es: {
 title: "Utaun - Generador de bancos de voz CV para Windows",
@@ -836,7 +845,7 @@ terms_body_3: "* Los términos de uso pueden cambiar si el software pasa a ser d
 terms_body_4: "[Sobre los archivos generados]",
 terms_body_5: "(Bancos de voz, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>Usted (el distribuidor) puede establecer libremente sus propias reglas en <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 fr: {
 title: "Utaun - Générateur de banques de voix CV pour Windows",
@@ -862,7 +871,7 @@ step_1: "Téléchargez la version 'Installateur' ou 'ZIP'.",
 step_2_installer: "<strong>[Version Installateur]</strong> Lancez l'installateur et suivez les instructions.",
 step_2_zip: "<strong>[Version ZIP]</strong> Placez '子音部・濁音部フォルダ' et <code>oto.ini</code> directement dans votre dossier 'Documents'.",
 step_3: "Lancez Utaun et suivez les instructions pour créer votre banque de voix.",
-step4: "Choisissez la sortie ZIP ou l'exportation directe de dossiers vers UTAU et OpenUTAU.",
+step_4: "Choisissez la sortie ZIP ou l'exportation directe de dossiers vers UTAU et OpenUTAU.",
 step_4_note: "* Les fonctions de mise à jour automatique seront bientôt disponibles.",
 terms_title: "Conditions d'utilisation (Terms of Use)",
 terms_body_1: "[À propos du logiciel Utaun]",
@@ -872,7 +881,7 @@ terms_body_3: "* Les conditions d'utilisation pourront changer si le logiciel de
 terms_body_4: "[À propos des éléments générés]",
 terms_body_5: "(Banches de voix, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>Vous (le distributeur) êtes libre de définir vos propres règles dans <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 it: {
 title: "Utaun - Generatore di banchi vocali CV per Windows",
@@ -908,7 +917,7 @@ terms_body_3: "* I termini di utilizzo potrebbero cambiare se il software divent
 terms_body_4: "[Informazioni sui file generati]",
 terms_body_5: "(Banchi vocali, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, ecc.)<br>L'utente (il distributore) è libero di impostare le proprie regole d'uso in <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 de: {
 title: "Utaun - CV-Voicebank-Generator für Windows",
@@ -944,7 +953,7 @@ terms_body_3: "* Die Nutzungsbedingungen können sich ändern, wenn die Software
 terms_body_4: "[Über erstellte Inhalte]",
 terms_body_5: "(Voicebanks, wav, icon.jpg / icon.bmp, <code>oto.ini</code> etc.)<br>Sie (der Verteiler) können Ihre eigenen Regeln frei in <code>readme.txt</code> festlegen.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 pl: {
 title: "Utaun - Generator banków głosów CV dla Windows",
@@ -980,7 +989,7 @@ terms_body_3: "* Warunki mogą ulec zmianie w przypadku przejścia na open-sourc
 terms_body_4: "[O materiałach wyjściowych]",
 terms_body_5: "(Banki głosów, wav, icon.jpg / icon.bmp, <code>oto.ini</code> itp.)<br>Ty (dystrybutor) możesz określić warunki w pliku <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 tr: {
 title: "Utaun - Windows için CV Ses Bankası Oluşturucu",
@@ -1003,7 +1012,7 @@ uc_5: "ZIP'i açıp doğrudan insansı Vocaloid materyali olarak kullanma",
 uc_6: "OtoMAD / YTPMV gibi içerikler için malzeme olarak kullanma",
 manual_title: "Utaun Nasıl Kullanılır?",
 step_1: "Tercih ettiğiniz 'Installer' veya 'ZIP' sürümünü indirin.",
-step_2_installer: "<strong>[Yükleyici sürümü için]</strong> Yükleyiciyi çalıştırın و talimatları izleyin.",
+step_2_installer: "<strong>[Yükleyici sürümü için]</strong> Yükleyiciyi çalıştırın und talimatları izleyin.",
 step_2_zip: "<strong>[ZIP sürümü için]</strong> '子音部・濁音部フォルダ' ve <code>oto.ini</code> dosyasını doğrudan 'Belgeler' klasörünüze yerleştirin.",
 step_3: "Utaun'u başlatın ve ses bankanızı oluşturmak için ekrandaki talimatları izleyin.",
 step_4: "ZIP çıktısı veya UTAU ile OpenUTAU'ya doğrudan klasör dışa aktarımı arasında seçim yapın.",
@@ -1016,7 +1025,7 @@ terms_body_3: "* Yazılım açık kaynaklı hale gelirse kullanım koşulları d
 terms_body_4: "[Üretilen Çıktılar Hakkında]",
 terms_body_5: "(Ses bankaları, wav, icon.jpg / icon.bmp, <code>oto.ini</code> vb.)<br>Siz (dağıtıcı) koşulları <code>readme.txt</code> dosyasına yazabilirsiniz.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 vi: {
 title: "Utaun - Trình tạo ngân hàng giọng nói CV cho Windows",
@@ -1039,9 +1048,9 @@ uc_5: "Sử dụng trực tiếp làm nguyên liệu dạng Vocaloid nhân tạo
 uc_6: "Dùng làm nguyên liệu cho OtoMAD / YTPMV",
 manual_title: "Cách sử dụng Utaun",
 step_1: "Tải phiên bản 'Cài đặt' hoặc 'ZIP' mà bạn muốn.",
-step_2_installer: "<strong>[Bản cài đặt]</strong> Chạy trình cài đặt và làm theo hướng dẫn.",
+step_2_installer: "<strong>[Bản cài đặt]</strong> Chạy trình cài đặt und làm theo hướng dẫn.",
 step_2_zip: "<strong>[Bản ZIP]</strong> Đặt '子音部・濁音部フォルダ' và <code>oto.ini</code> trực tiếp vào thư mục 'Documents'.",
-step_3: "Khởi chạy Utaun và làm theo hướng dẫn để tạo ngân hàng giọng nói.",
+step_3: "Khởi chạy Utaun und làm theo hướng dẫn để tạo ngân hàng giọng nói.",
 step_4: "Chọn xuất ZIP hoặc xuất trực tiếp sang UTAU và OpenUTAU.",
 step_4_note: "* Tính năng tự động cập nhật sẽ có trong các phiên bản sau.",
 terms_title: "Điều khoản sử dụng (Terms of Use)",
@@ -1052,7 +1061,7 @@ terms_body_3: "* Điều khoản sử dụng có thể thay đổi nếu phần 
 terms_body_4: "[Về sản phẩm tạo ra]",
 terms_body_5: "(Ngân hàng giọng nói, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, v.v.)<br>Bạn có thể tự do đặt điều khoản trong <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 fil: {
 title: "Utaun - CV Voicebank Generator para sa Windows",
@@ -1075,9 +1084,9 @@ uc_5: "Direktang paggamit bilang materyal na istilong Vocaloid",
 uc_6: "Paggamit bilang materyal para sa OtoMAD / YTPMV",
 manual_title: "Paano Gamitin ang Utaun",
 step_1: "I-download ang 'Installer' o 'ZIP' na bersyon.",
-step_2_installer: "<strong>[Para sa Installer]</strong> Patakbuhin ang installer at sundin ang mga tagubilin.",
+step_2_installer: "<strong>[Para sa Installer]</strong> Patakbuhin ang installer und sundin ang mga tagubilin.",
 step_2_zip: "<strong>[Para sa ZIP]</strong> Ilagay ang '子音部・濁音部フォルダ' at <code>oto.ini</code> nang direkta sa iyong folder na 'Documents'.",
-step_3: "Ilunsad ang Utaun at sundin ang mga tagubilin upang lumikha ng voicebank.",
+step_3: "Ilunsad ang Utaun und sundin ang mga tagubilin upang lumikha ng voicebank.",
 step_4: "Pumili sa pagitan ng ZIP output o direktang pag-export ng folder sa UTAU at OpenUTAU.",
 step_4_note: "* Magiging available ang auto-update sa mga susunod na bersyon.",
 terms_title: "Mga Tuntunin sa Paggamit (Terms of Use)",
@@ -1088,7 +1097,7 @@ terms_body_3: "* Maaaring magbago ang mga tuntunin kung maging open-source ito."
 terms_body_4: "[Tungkol sa mga Nalikhang Awput]",
 terms_body_5: "(Voicebanks, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, atbp.)<br>Malaya kang magtakda ng sarili mong tuntunin sa <code>readme.txt</code>.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 },
 th: {
 title: "Utaun - โปรแกรมสร้างคลังเสียง CV สำหรับ Windows",
@@ -1106,14 +1115,14 @@ usecase_title: "การใช้งานที่รองรับ",
 uc_1: "When you want an UTAU voicebank with an inanimate voice",
 uc_2: "การสร้างคลังเสียงสำหรับผู้ที่ไม่สะดวกบันทึกเสียงตัวเอง",
 uc_3: "การวิจัยวัสดุการจำลองคลื่นไซน์คอมโพสิต (CSM)",
-uc_4: "การสร้างต้นแบบคลังเสียงแบบกำหนดเอง",
+uc_4: "การสร้างต้นแบบคลังเสียงแบบกำหนดแบบ",
 uc_5: "แตกไฟล์ ZIP และใช้เป็นวัสดุสไตล์ Vocaloid ทันที",
 uc_6: "ใช้เป็นวัสดุสำหรับ OtoMAD / YTPMV",
 manual_title: "วิธีใช้งาน Utaun",
 step_1: "ดาวน์โหลดเวอร์ชัน 'ตัวติดตั้ง' หรือ 'ZIP' ที่คุณต้องการ",
-step_2_installer: "<strong>[สำหรับตัวติดตั้ง]</strong> เปิดตัวติดตั้งและทำตามคำแนะนำบนหน้าจอ",
+step_2_installer: "<strong>[สำหรับตัวติดตั้ง]</strong> เปิดตัวติดตั้ง und ทำตามคำแนะนำบนหน้าจอ",
 step_2_zip: "<strong>[สำหรับเวอร์ชัน ZIP]</strong> วาง '子音部・濁音部フォルダ' และไฟล์ <code>oto.ini</code> ไว้ในโฟลเดอร์ 'Documents' ของคุณโดยตรง",
-step_3: "เปิด Utaun และทำตามคำแนะนำเพื่อสร้างคลังเสียง",
+step_3: "เปิด Utaun und ทำตามคำแนะนำเพื่อสร้างคลังเสียง",
 step_4: "เลือกการส่งออกเป็น ZIP หรือส่งออกโฟลเดอร์ไปยัง UTAU และ OpenUTAU โดยตรง",
 step_4_note: "* คุณสมบัติอัปเดตอัตโนมัติจะมีให้ใช้งานในเวอร์ชันถัดไป",
 terms_title: "เงื่อนไขการใช้งาน (Terms of Use)",
@@ -1124,7 +1133,7 @@ terms_body_3: "* เงื่อนไขอาจมีการเปลี่
 terms_body_4: "[เกี่ยวกับผลลัพธ์ที่สร้างขึ้น]",
 terms_body_5: "(คลังเสียง, wav, icon.jpg / icon.bmp, <code>oto.ini</code> ฯลฯ)<br>คุณสามารถกำหนดเงื่อนไขใน <code>readme.txt</code>",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
-   btn_github: "View on GitHub"
+btn_github: "View on GitHub"
 }
 };
 
