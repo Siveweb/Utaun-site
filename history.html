@@ -24,9 +24,31 @@
       -webkit-text-stroke: 0.1px currentColor !important;
       text-stroke: 0.1px currentColor !important;
     }
-        body { background-color: #ffffff; color: #000000; margin: 0; padding: 0; line-height: 1.6; display: flex; justify-content: center; min-height: 100vh; box-sizing: border-box; }
+        /* html・bodyの背景色をウィンドウと同じ薄い水色(#f0f8ff)にして隙間を完全に隠す */
+        html, body { 
+            background-color: #f0f8ff; 
+            color: #000000; 
+            margin: 0; 
+            padding: 0; 
+            width: 100%;
+            min-height: 100vh; 
+            box-sizing: border-box; 
+        }
         * { box-sizing: border-box; }
-        .retro-window { width: 100%; background-color: #f0f8ff; border: 2px solid; border-color: #ffffff #09A3F2 #09A3F2 #ffffff; box-shadow: 4px 4px 0px #09A3F2; border-radius: 0px; overflow: hidden; display: flex; flex-direction: column; }
+
+        /* borderとbox-shadowを削除して端までピッタリ広げる */
+        .retro-window { 
+            width: 100%; 
+            background-color: #f0f8ff; 
+            border: none; 
+            box-shadow: none; 
+            border-radius: 0px; 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+        }
+
         .window-header { background: linear-gradient(90deg, #026ca7, #09A3F2); color: #ffffff; padding: 6px 8px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.05em; }
         .window-title { display: flex; align-items: center; gap: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .window-controls { display: flex; gap: 2px; flex-shrink: 0; }
@@ -68,7 +90,7 @@
             flex-shrink: 0; 
         }
         
-        .container { padding: 1.5rem; background-color: #ffffff; overflow-y: auto; word-break: break-word; }
+        .container { padding: 1.5rem; background-color: #ffffff; flex-grow: 1; overflow-y: auto; word-break: break-word; }
         .hero-header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 2rem; border-bottom: 1px dashed #09A3F2; padding-bottom: 1.5rem; flex-wrap: wrap; }
         .logo-img { width: 64px; height: 64px; border: 2px solid #09A3F2; object-fit: cover; flex-shrink: 0; }
         .hero-titles { flex: 1; min-width: 200px; }
