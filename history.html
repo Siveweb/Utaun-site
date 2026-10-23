@@ -31,12 +31,42 @@
         .window-controls { display: flex; gap: 2px; flex-shrink: 0; }
         .win-btn { width: 16px; height: 15px; background-color: #c0c0c0; border: 1px solid; border-color: #ffffff #404040 #404040 #ffffff; font-size: 10px; line-height: 12px; text-align: center; color: #000000; font-weight: bold; cursor: pointer; }
         .browser-toolbar { background-color: #e2f4fd; border-bottom: 2px solid #09A3F2; padding: 6px; display: flex; flex-direction: column; gap: 6px; }
-        .toolbar-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
-        .nav-links { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
-        .nav-links a { text-decoration: none; color: #000000; font-size: 0.85rem; padding: 2px 8px; border: 1px solid; border-color: #ffffff #09A3F2 #09A3F2 #ffffff; background-color: #ffffff; white-space: nowrap; }
+        
+        /* 1行に収めるためのレイアウト調整 */
+        .toolbar-row { display: flex; justify-content: space-between; align-items: center; gap: 4px; width: 100%; min-width: 0; }
+        
+        /* メニュー側：画面が狭いときは自動で縮むように調整 */
+        .nav-links { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; flex-shrink: 1; min-width: 0; }
+        .nav-links li { flex-shrink: 1; min-width: 0; }
+        .nav-links a { 
+            display: block;
+            text-decoration: none; 
+            color: #000000; 
+            font-size: 0.8rem; 
+            padding: 2px 5px; 
+            border: 1px solid; 
+            border-color: #ffffff #09A3F2 #09A3F2 #ffffff; 
+            background-color: #ffffff; 
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .nav-links a:hover, .nav-links a.active { background-color: #09A3F2; color: #ffffff; border-color: #09A3F2 #ffffff #ffffff #09A3F2; }
+        
         .address-bar { background: #ffffff; border: 1px solid; border-color: #09A3F2 #ffffff #ffffff #09A3F2; padding: 3px 6px; font-size: 0.8rem; color: #333333; flex-grow: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .lang-select { background-color: #ffffff; color: #000000; border: 1px solid; border-color: #ffffff #09A3F2 #09A3F2 #ffffff; padding: 3px; font-size: 0.8rem; max-width: 100%; }
+        
+        /* プルダウン側：絶対にはみ出さないようにflex-shrink: 0で右端に固定 */
+        .lang-select { 
+            background-color: #ffffff; 
+            color: #000000; 
+            border: 1px solid; 
+            border-color: #ffffff #09A3F2 #09A3F2 #ffffff; 
+            padding: 3px 2px; 
+            font-size: 0.8rem; 
+            width: 82px; 
+            flex-shrink: 0; 
+        }
+        
         .container { padding: 1.5rem; background-color: #ffffff; overflow-y: auto; word-break: break-word; }
         .hero-header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 2rem; border-bottom: 1px dashed #09A3F2; padding-bottom: 1.5rem; flex-wrap: wrap; }
         .logo-img { width: 64px; height: 64px; border: 2px solid #09A3F2; object-fit: cover; flex-shrink: 0; }
@@ -67,27 +97,27 @@
                     <li><a href="history.html" class="active" data-i18n="navHistory">履歴</a></li>
                 </ul>
                 <select class="lang-select" id="langSelect">
-                    <option value="ja">🇯🇵 日本語</option>
-                    <option value="en">🇬🇧 English</option>
-                    <option value="en-us">🇺🇸 English</option>
-                    <option value="ko">🇰🇷 한국어</option>
-                    <option value="zh-cn">🇨🇳 简体中文</option>
-                    <option value="zh-tw">🇹🇼 繁體中文</option>
-                    <option value="zh-hk">🇭🇰 繁體中文 (香港)</option>
-                    <option value="ru">🇷🇺 Русский</option>
-                    <option value="pt">🇵🇹 Português</option>
-                    <option value="es">🇪🇸 Español</option>
-                    <option value="fr">🇫🇷 Français</option>
-                    <option value="it">🇮🇹 Italiano</option>
-                    <option value="de">🇩🇪 Deutsch</option>
-                    <option value="pl">🇵🇱 Polski</option>
-                    <option value="tr">🇹🇷 Türkçe</option>
-                    <option value="vi">🇻🇳 Tiếng Việt</option>
-                    <option value="fil">🇵🇭 Filipino</option>
-                    <option value="th">🇹🇭 ไทย</option>
+                    <option value="ja">🇯🇵 JA</option>
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="en-us">🇺🇸 EN-US</option>
+                    <option value="ko">🇰🇷 KO</option>
+                    <option value="zh-cn">🇨🇳 ZH-CN</option>
+                    <option value="zh-tw">🇹🇼 ZH-TW</option>
+                    <option value="zh-hk">🇭🇰 ZH-HK</option>
+                    <option value="ru">🇷🇺 RU</option>
+                    <option value="pt">🇵🇹 PT</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="it">🇮🇹 IT</option>
+                    <option value="de">🇩🇪 DE</option>
+                    <option value="pl">🇵🇱 PL</option>
+                    <option value="tr">🇹🇷 TR</option>
+                    <option value="vi">🇻🇳 VI</option>
+                    <option value="fil">🇵🇭 FIL</option>
+                    <option value="th">🇹🇭 TH</option>
                 </select>
             </div>
-            <div class="toolbar-row"><div class="address-bar">A:\UTAUN\HISTORY.HTM</div></div>
+            <div class="toolbar-row"><div class="address-bar">A:\ UTAUN \ HISTORY. HTM</div></div>
         </div>
 
         <div class="container">
@@ -265,7 +295,7 @@
                 v109_3: "Corrección de errores: Se corrigió un error por el cual partes de la pantalla de configuración retenían el estado del modo anterior incluso después de cambiar de modo.",
                 v107_1: "¡Selección de modo claro/oscuro ahora disponible!", v107_2: "¡Exportación directa a OpenUTAU y UTAU compatible!", v107_3: "¡Funcionalidad de actualización dentro de la aplicación implementada!", v107_4: "Límite superior de Hz cambiado de 400 a 600", v107_5: "¡Se agregó la opción entre codificación Shift-JIS y UTF-8!", v107_6: "Interfaz rediseñada",
                 v106_1: "Pronunciación de consonantes mejorada", v106_2: "Pronunciación de vocales mejorada", v106_3: "¡Soporte para PC de 32 bits iniciado!", v106_4: "¡Lanzamiento de versión con instalador iniciado!",
-                v105_1: "Se corrigió un problema por el cual no se generaban sonidos sonoros/semi-sonoros", v104_1: "¡Soporte multilingüe compatible con OpenUTAU iniciado!", v103_1: "¡Compatible con PC con configuración de OneDrive activada!", v102_1: "Corrección de errores menores", v101_1: "El destino de las carpetas de consonantes/sonoras y 'oto.ini' se cambió a la carpeta 'Documentos' para evitar bloqueos de seguridad", v100_1: "<strong>¡Primer lanzamiento de Utaun!</strong>"
+                v105_1: "Se corrigió un problema por el cual no se generaban sonidos sonoros/semi-sonoros", v104_1: "¡Soporte multilingüe compatible con OpenUTAU iniciado!", v103_1: "¡Compatible con PC con configuración de OneDrive activada!", v102_1: "Corrección de errores menores", v101_1: "El destino de las carpetas de consonantes/sonoras y 'oto.ini' se cambió a la carpeta 'Documentos' para evitar bloqueios de seguridad", v100_1: "<strong>¡Primer lanzamiento de Utaun!</strong>"
             },
             fr: {
                 title: "Utaun - Historique des versions",
