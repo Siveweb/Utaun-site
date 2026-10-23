@@ -5,7 +5,6 @@
 <meta name="google-site-verification" content="HR5duaG7kJc7cPypTsmMkbR114Klfllj53-V0vN2vKE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Utaun - Windows用CV音源生成ソフトウェア</title>
-<!-- レトロ日本語ドットフォント（DotGothic16）をGoogle Fontsから読み込み -->
   <!-- 1. JSDelivr公式が推奨する、中身のデータまで直通している完全なインポート形式 -->
   <style>
     @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
@@ -101,8 +100,9 @@ gap: 6px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-flex-wrap: wrap;
-gap: 6px;
+gap: 4px;
+width: 100%;
+min-width: 0;
 }
 .nav-links {
 display: flex;
@@ -110,17 +110,25 @@ gap: 2px;
 list-style: none;
 margin: 0;
 padding: 0;
-flex-wrap: wrap;
+flex-shrink: 1;
+min-width: 0;
+}
+.nav-links li {
+flex-shrink: 1;
+min-width: 0;
 }
 .nav-links a {
+display: block;
 text-decoration: none;
 color: #000000;
 font-size: 0.85rem;
-padding: 2px 8px;
+padding: 2px 6px;
 border: 1px solid;
 border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
 background-color: #ffffff;
 white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 .nav-links a:hover, .nav-links a.active {
 background-color: #09A3F2;
@@ -139,25 +147,16 @@ overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
 }
+/* プルダウンの固定幅設定 */
 .lang-select {
 background-color: #ffffff;
 color: #000000;
 border: 1px solid;
 border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
-padding: 3px;
+padding: 3px 2px;
 font-size: 0.8rem;
-max-width: 100%;
-.lang-select {
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid;
-    border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
-    padding: 3px 6px;
-    font-size: 0.8rem;
-    width: 95px;      /* ←ここを追加！ */
-    flex-shrink: 0;   /* ←ここを追加！ */
-}
-
+width: 82px;
+flex-shrink: 0;
 }
 /* メインコンテンツ */
 .container {
@@ -362,30 +361,31 @@ color: #555555;
 <li><a href="ui-gallery.html" data-i18n="navGuide">UI画面</a></li>
 <li><a href="history.html" data-i18n="navHistory">履歴</a></li>
 </ul>
+
 <select class="lang-select" id="langSelect">
-    <option value="ja">🇯🇵 JA</option>
-    <option value="en">🇬🇧 EN</option>
-    <option value="en-us">🇺🇸 EN-US</option>
-    <option value="ko">🇰🇷 KO</option>
-    <option value="zh-cn">🇨🇳 ZH-CN</option>
-    <option value="zh-tw">🇹🇼 ZH-TW</option>
-    <option value="zh-hk">🇭🇰 ZH-HK</option>
-    <option value="ru">🇷🇺 RU</option>
-    <option value="pt">🇵🇹 PT</option>
-    <option value="es">🇪🇸 ES</option>
-    <option value="fr">🇫🇷 FR</option>
-    <option value="it">🇮🇹 IT</option>
-    <option value="de">🇩🇪 DE</option>
-    <option value="pl">🇵🇱 PL</option>
-    <option value="tr">🇹🇷 TR</option>
-    <option value="vi">🇻🇳 VI</option>
-    <option value="fil">🇵🇭 FIL</option>
-    <option value="th">🇹🇭 TH</option>
+<option value="ja">🇯🇵 JA</option>
+<option value="en">🇬🇧 EN</option>
+<option value="en-us">🇺🇸 EN-US</option>
+<option value="ko">🇰🇷 KO</option>
+<option value="zh-cn">🇨🇳 ZH-CN</option>
+<option value="zh-tw">🇹🇼 ZH-TW</option>
+<option value="zh-hk">🇭🇰 ZH-HK</option>
+<option value="ru">🇷🇺 RU</option>
+<option value="pt">🇵🇹 PT</option>
+<option value="es">🇪🇸 ES</option>
+<option value="fr">🇫🇷 FR</option>
+<option value="it">🇮🇹 IT</option>
+<option value="de">🇩🇪 DE</option>
+<option value="pl">🇵🇱 PL</option>
+<option value="tr">🇹🇷 TR</option>
+<option value="vi">🇻🇳 VI</option>
+<option value="fil">🇵🇭 FIL</option>
+<option value="th">🇹🇭 TH</option>
 </select>
 </div>
 <div class="toolbar-row">
 <div class="address-bar">
-A:\ UTAUN \ WELCOME. HTM
+A:\UTAUN\WELCOME.HTM
 </div>
 </div>
 </div>
@@ -766,18 +766,18 @@ terms_title: "使用條款 (Terms of Use)",
 terms_body_1: "【關於 Utaun 本體】",
 terms_body_2: "Utaun 現已開源（開放源代碼）。非常歡迎大家自由修改代碼或製作插件（擴展功能）！不過，為咗確保安全營運同埋防止被惡意利用嚟謀利，請遵守以下規則：",
 terms_body_copyright_title: "■ 關於版權",
-terms_body_copyright_desc: "Utaun 本體嘅版權，以及未來官方更新中所採用嘅代碼（修改部分）嘅版權，均歸屬於包含所有相關開發者在內嘅本軟件開發項目「SiveProject」。",
+terms_body_copyright_desc: "Utaun 本體嘅版權，以及未來官方更新中所採用嘅代碼（修改部分）嘅版權，均歸屬於包含所有相關開發者喺內嘅本軟件開發項目「SiveProject」。",
 terms_body_prohibit_title: "■ 禁止事項",
 terms_body_prohibit_list: "· 商用（有償分發、使用本軟件進行營利活動等一切謀利行為）<br>· 植入病毒、木馬、惡意軟件等進行惡意利用嘅行為<br>· 喺官方（GitHub: SiveProject）以外嘅渠道重新分發本軟件（※經許可嘅鏡像分發除外）",
 terms_body_rule_title: "■ 代碼修改同插件製作規則",
-terms_body_rule_desc: "· 【修改方法】修改代碼時，請從 GitHub 下載「.py」文件，並喺你自己嘅 PC 等本地環境中進行修改同實驗。<br>· 請勿未經官方允許私自將改造後嘅本體或插件向唔特定多數人隨意分發。<br>· 當你想分享「我咁樣修改咗！」或「我整咗插件！」時，請務必將實際嘅運行界面（截圖或視頻）發送到官方 Discord 服務器！<br>· 【重要】如果你希望將改造後嘅源代碼打包（編譯）成「.exe」、「.app」、「Linux 專用可執行文件」等應用程式形式（二進制格式）並進行官方發布，需事先喺官方 Discord 服務器等平台上討論決定。另外，若當時聚集咗幾名成員並做出決定，則無需等待其他唔在場嘅成員參與，即可直接推進編譯同發布工作（以優先考慮開發速度）。",
+terms_body_rule_desc: "· 【修改方法】修改代碼時，請從 GitHub 下載「.py」文件，並喺你自己嘅 PC 等本地環境中進行修改同實驗。<br>· 請勿未經官方允許私自將改造後嘅本體或插件向唔特定多數人隨意分發。<br>· 當你想分享「我咁樣修改咗！」或「我整咗插件！」時，請務必將實際嘅運行界面（截圖或視頻）發送到官方 Discord 服務器！<br>· 【重要】如果你希望將改造後嘅源代碼打包（編譯）成「.exe」、「.app」、「Linux 專用可執行文件」等應用程式形式（二進制格式）並進行官方發布，需事先喺官方 Discord 服務器等平台上討論決定。另外，若當時聚集咗幾名成員並做出決定，則無需等待其他唔喺場嘅成員參與，即可直接推進編譯同發布工作（以優先考慮開發速度）。",
 terms_body_warning_title: "⚠️ 注意",
 terms_body_warning_desc: "對於從官方以外嘅地方下載嘅「Utaun」，作者及項目成員概不負責。為咗安全起見，請務必從官方 GitHub（或官方網站鏈接）下載。",
 terms_body_4: "【關於生成物】",
 terms_body_5: "（音源、wav、icon.jpg / icon.bmp、<code>oto.ini</code> 等）<br>使用條款可由你（發布者）自由設定。請喺 <code>readme.txt</code> 度寫低你鍾意嘅條款。",
 terms_effective_date: "本條款自 2026 年 10 月 6 日起適用。",
 mirror_title: "【關於鏡像分發嘅特例條款】",
-mirror_desc: "由於網絡環境限制等原因導致去 GitHub 有困難嘅地區，在滿足以下條件嘅情況下，允許進行鏡像分發：",
+mirror_desc: "由於網絡環境限制等原因導致去 GitHub 有困難嘅地區，喺滿足以下條件嘅情況下，允許進行鏡像分發：",
 m_1: "<strong>署名要求：</strong> 必須明確標明開發者為 Sive Lalala。",
 m_2: "<strong>文檔要求：</strong> 必須隨附官方 README（或其翻譯版本）。",
 m_3: "<strong>保持原樣：</strong> 禁止修改、編輯、改造或反編譯程序。僅可分發來自 GitHub 的原始文件。",
@@ -974,7 +974,7 @@ btn_readme: "Scarica README",
 badge_platform: "Solo per Windows",
 about_title: "Cos'è Utaun?",
 about_text: "Un software per Windows che genera banchi vocali CV per UTAU esclusivamente tramite modellazione di onde sinusoidali composite inanimate (sintesi CSM).",
-adachi_box: '<strong>💡 Informazioni sul metodo di sintesi CSM di <a href="https://mechanicalgirl.jp/adachi-rei/" target="_blank" style="color: #026ca7; text-decoration: underline;">足立レイ</a></strong><br>Un metodo di sintesi che combina onde per creare voci da materiali inanimati.',
+adachi_box: '<strong>💡 Informazioni sul metodo di sintesi CSM di <a href="https://mechanicalgirl.jp/adachi-rei/" target="_blank" style="color: #026ca7; text-decoration: underline;">足立レイ</a></strong><br>Un metodo di sintesi che combina onde per creare voci da materiali inanimate.',
 usecase_title: "Casi d'uso",
 uc_1: "Quando desideri un banco vocale UTAU inanimato",
 uc_2: "Creazione di banchi vocali per chi non registra la propria voce",
@@ -1040,7 +1040,7 @@ terms_body_copyright_desc: "Das Urheberrecht am Utaun-Kern sowie an jeglichem Co
 terms_body_prohibit_title: "■ Verbotene Handlungen",
 terms_body_prohibit_list: "· Kommerzielle Nutzung (kostenpflichtige Weitergabe, kommerzielle Aktivitäten mit dieser Software usw.)<br>· Einschleusen von Viren, Trojanern, Malware etc. zu böswilligen Zwecken<br>· Weitergabe dieser Software außerhalb offizieller Kanäle (GitHub: SiveProject) (außer erlaubten Mirrors)",
 terms_body_rule_title: "■ Regeln für Code-Anpassungen und Plugin-Erstellung",
-terms_body_rule_desc: "· [Wie man anpasst] Laden Sie '.py'-Dateien von GitHub herunter und experimentieren Sie in Ihrer lokalen Umgebung (z. B. auf Ihrem PC).<br>· Verteilen Sie modifizierte Kerne oder Plugins nicht ohne offizielle Erlaubnis an die Öffentlichkeit.<br>· Teilen Sie Ausführungsbildschirme im offiziellen Discord-Server!<br>· [Important] Wenn Sie modifizierten Quellcode in App-Formate ('.exe', '.app' etc.) für ein offizielles Release kompilieren möchten, wird dies vorab im offiziellen Discord besprochen.",
+terms_body_rule_desc: "· [Wie man anpasst] Laden Sie '.py'-Dateien von GitHub herunter und experimentieren Sie in Ihrer lokalen Umgebung (z. B. auf Ihrem PC).<br>· Verteilen Sie modifizierte Kerne oder Plugins nicht ohne offizielle Erlaubnis an die Öffentlichkeit.<br>· Teilen Sie Ausführungsbildschirme im offiziellen Discord-Server!<br>· [Important] Wenn Sie modifizierten Quellcode in App-Formate ('.exe', '.app' etc.) für ein offizielle Release kompilieren möchten, wird dies vorab im offiziellen Discord besprochen.",
 terms_body_warning_title: "⚠️ Warnung",
 terms_body_warning_desc: "Der Autor und die Projektpartner übernehmen keine Verantwortung für 'Utaun', das von inoffiziellen Orten heruntergeladen wurde. Laden Sie es zur Sicherheit immer vom offiziellen GitHub herunter.",
 terms_body_4: "[Über erstellte Inhalte]",
@@ -1111,7 +1111,7 @@ uc_3: "Bileşik sinüs dalgası modellemesi (CSM sentezi) malzeme araştırması
 uc_4: "Özel ses bankası prototipleme",
 uc_5: "ZIP'i açıp doğrudan insansı Vocaloid materyali olarak kullanma",
 uc_6: "OtoMAD / YTPMV gibi içerikler için malzeme olarak kullanma",
-manual_title: "Utaun Nasıl Kullanılır?",
+manual_title: "Nasıl Kullanılır?",
 step_1: "Tercih ettiğiniz 'Installer' veya 'ZIP' sürümünü indirin.",
 step_2_installer: "<strong>[Yükleyici sürümü için]</strong> Yükleyiciyi çalıştırın und talimatları izleyin.",
 step_2_zip: "<strong>[ZIP sürümü için]</strong> '子音部・濁音部フォルダ' ve <code>oto.ini</code> dosyasını doğrudan 'Belgeler' klasörünüze yerleştirin.",
