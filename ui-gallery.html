@@ -18,9 +18,31 @@
       -webkit-text-stroke: 0.1px currentColor !important;
       text-stroke: 0.1px currentColor !important;
     }
-    body { background-color: #ffffff; color: #000000; margin: 0; padding: 0; line-height: 1.6; display: flex; justify-content: center; min-height: 100vh; box-sizing: border-box; }
+        /* html・body全体の余白を完全に消し、背景色をウィンドウと同じ薄い水色(#f0f8ff)にする */
+        html, body { 
+            background-color: #f0f8ff; 
+            color: #000000; 
+            margin: 0; 
+            padding: 0; 
+            width: 100%;
+            min-height: 100vh; 
+            box-sizing: border-box; 
+        }
         * { box-sizing: border-box; }
-        .retro-window { width: 100%; background-color: #f0f8ff; border: 2px solid; border-color: #ffffff #09A3F2 #09A3F2 #ffffff; box-shadow: 4px 4px 0px #09A3F2; border-radius: 0px; overflow: hidden; display: flex; flex-direction: column; }
+
+        /* borderとbox-shadowを削除して端までピッタリ広げる */
+        .retro-window { 
+            width: 100%; 
+            background-color: #f0f8ff; 
+            border: none; 
+            box-shadow: none; 
+            border-radius: 0px; 
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+        }
+        
         .window-header { background: linear-gradient(90deg, #026ca7, #09A3F2); color: #ffffff; padding: 6px 8px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.05em; }
         .window-title { display: flex; align-items: center; gap: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .window-controls { display: flex; gap: 2px; flex-shrink: 0; }
@@ -36,7 +58,7 @@
         
         .lang-select { background-color: #ffffff; color: #000000; border: 1px solid; border-color: #ffffff #09A3F2 #09A3F2 #ffffff; padding: 3px 2px; font-size: 0.8rem; width: 82px; flex-shrink: 0; }
         
-        .container { padding: 1.5rem; background-color: #ffffff; overflow-y: auto; word-break: break-word; }
+        .container { padding: 1.5rem; background-color: #ffffff; flex-grow: 1; overflow-y: auto; word-break: break-word; }
         h3 { font-size: 1.1rem; background-color: #09A3F2; color: #ffffff; padding: 4px 8px; margin-top: 0; margin-bottom: 1.5rem; }
         .ui-gallery { display: flex; flex-direction: column; gap: 2rem; }
         .ui-item { background-color: #f7fbff; border: 1px solid #09A3F2; padding: 12px; }
@@ -49,7 +71,7 @@
 <body>
     <div class="retro-window">
         <div class="window-header">
-            <div class="window-title"><span id="win-title-text" data-i18n="win-title">UTAUN.EXE-[UI_GALLERY]</span></div>
+            <div class="window-title"><span id="win-title-text" data-i18n="winTitle">UTAUN.EXE-[UI_GALLERY]</span></div>
             <div class="window-controls"><div class="win-btn">_</div><div class="win-btn">□</div><div class="win-btn">×</div></div>
         </div>
         <div class="browser-toolbar">
@@ -164,7 +186,7 @@
                 title: "Utaun - Galleria UI", winTitle: "UTAUN.EXE-[UI_GALLERY]",
                 navHome: "Home", navGuide: "Interfaccia", navHistory: "Cronologia",
                 gallery_main_title: "UI (Galleria delle schermate)",
-                ui_1: "UI (Schermata Operativa Light)", ui_2: "UI (Schermata Impostazioni Light)", ui3: "UI (Schermata Operativa Dark)", ui_4: "UI (Schermata Impostazioni Dark)", ui_5: "UI (Schermata di Esportazione)", ui_6: "UI (Dettagli Aggiornamento)", ui_7: "UI (Schermata Aggiornamento)"
+                ui_1: "UI (Schermata Operativa Light)", ui_2: "UI (Schermata Impostazioni Light)", ui_3: "UI (Schermata Operativa Dark)", ui_4: "UI (Schermata Impostazioni Dark)", ui_5: "UI (Schermata di Esportazione)", ui_6: "UI (Dettagli Aggiornamento)", ui_7: "UI (Schermata Aggiornamento)"
             },
             de: {
                 title: "Utaun - UI-Galerie", winTitle: "UTAUN.EXE-[UI_GALLERY]",
@@ -212,7 +234,6 @@
 
             document.getElementById('page-title').innerText = t.title;
 
-            // data-i18n 属性を持った要素を一括で書き換え
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (t[key] !== undefined && t[key] !== "") {
@@ -221,13 +242,11 @@
             });
         }
 
-        // 初期読み込み時の言語適用
         const savedLang = localStorage.getItem('utaun_lang') || 'ja';
         if (langSelect) {
             langSelect.value = savedLang;
             applyLanguage(savedLang);
 
-            // セレクトボックス変更時
             langSelect.addEventListener('change', (e) => {
                 const lang = e.target.value;
                 localStorage.setItem('utaun_lang', lang);
@@ -235,7 +254,6 @@
             });
         }
 
-        // 他のタブやページで言語が変わったときの同期
         window.addEventListener('storage', (e) => {
             if (e.key === 'utaun_lang' && e.newValue) {
                 if (langSelect) langSelect.value = e.newValue;
