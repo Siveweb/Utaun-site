@@ -5,21 +5,15 @@
 <meta name="google-site-verification" content="HR5duaG7kJc7cPypTsmMkbR114Klfllj53-V0vN2vKE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Utaun - Windows用CV音源生成ソフトウェア</title>
-  <!-- 1. JSDelivr公式が推奨する、中身のデータまで直通している完全なインポート形式 -->
   <style>
     @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
     body, body * {
-      /* 日本語・中国語・英語・韓国語すべての文字データが、この名前でiPhoneに適用されます */
       font-family: "Galmuri11", "Galmuri9", monospace !important;
-      
-      /* iPhone（Safari）でピンチアウト拡大しても、文字が滑らかに戻らずドットエッジを維持する命令 */
       image-rendering: pixelated !important;
       image-rendering: crisp-edges !important;
       -webkit-font-smoothing: none !important;
       font-smooth: never !important;
-
-      /* スマホ画面でドット線が消えてツルツルに化けるのを防ぐ、クッキリ浮き立たせ補正 */
       -webkit-text-stroke: 0.1px currentColor !important;
       text-stroke: 0.1px currentColor !important;
     }
@@ -27,10 +21,8 @@ body {
 background-color: #ffffff;
 color: #000000;
 margin: 0;
-padding: 1rem;
+padding: 0;
 line-height: 1.6;
-display: flex;
-justify-content: center;
 min-height: 100vh;
 box-sizing: border-box;
 }
@@ -39,15 +31,13 @@ box-sizing: border-box;
 }
 .retro-window {
 width: 100%;
-max-width: 800px;
 background-color: #f0f8ff;
-border: 2px solid;
-border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
-box-shadow: 4px 4px 0px #09A3F2;
+border: none;
 border-radius: 0px;
 overflow: hidden;
 display: flex;
 flex-direction: column;
+min-height: 100vh;
 }
 /* ウィンドウタイトルバー */
 .window-header {
@@ -162,7 +152,7 @@ flex-shrink: 0;
 .container {
 padding: 1.5rem;
 background-color: #ffffff;
-overflow-y: auto;
+flex-grow: 1;
 word-break: break-word;
 }
 .hero-header {
@@ -254,7 +244,7 @@ font-size: 0.9rem;
 }
 .usecase-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 8px;
 }
 .usecase-card {
@@ -297,7 +287,6 @@ font-size: 0.8rem;
 color: #666666;
 margin-top: 0.25rem;
 }
-/* 規約ボックスのスタイル */
 .terms-box {
 background-color: #f7fbff;
 border: 1px solid #09A3F2;
@@ -308,7 +297,6 @@ margin-top: 0.5rem;
 margin: 0.5rem 0 0 0;
 padding-left: 1.2rem;
 }
-/* ミラー配布許可セクションのスタイル（デフォルト非表示） */
 .mirror-box {
 background-color: #fffaf0;
 border: 1px solid #f0a020;
@@ -320,7 +308,6 @@ display: none;
 margin: 0.5rem 0 0 0;
 padding-left: 1.2rem;
 }
-/* 姉妹サイトリンク */
 .sister-site-box {
 margin-bottom: 1.5rem;
 text-align: center;
@@ -403,7 +390,6 @@ A:\ UTAUN \ WELCOME. HTM
 <div class="dl-buttons">
 <a href="./Utaun/Utaun ver-1.0.9.zip" class="dl-btn" target="_blank" data-i18n="btn_zip">ZIP版をDL</a>
 <a href="./Utaun/Utaun_1.0.9_Installer.exe" class="dl-btn" target="_blank" data-i18n="btn_installer">インストーラー版をDL</a>
-<!-- 言語ごとにリンクが切り替わるREADMEダウンロードボタン -->
 <a href="./README.md" class="dl-btn" download="README.md" id="readme-dl-btn" style="display: none;" data-i18n="btn_readme">READMEをDL</a>
 </div>
 <div>
@@ -501,6 +487,30 @@ A:\ UTAUN \ WELCOME. HTM
 </a>
 </div>
 
+<!-- GitHub Issues & Discord 案内セクション（フッター手前） -->
+<section style="background-color: #f7fbff; border: 1px solid #09A3F2; padding: 1rem; margin-top: 2rem; font-size: 0.85rem;">
+    <!-- Discord案内 -->
+    <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed #09A3F2;">
+        <p style="margin: 0 0 0.5rem 0; font-weight: bold; color: #026ca7;" data-i18n="discord_title">💬 公式Discordサーバー</p>
+        <p style="margin: 0 0 0.5rem 0; color: #333333;" data-i18n="discord_desc">改造コードの共有、プラグインの報告、開発者同士の交流や相談は公式Discordで受け付けています！</p>
+        <p style="margin: 0;"><a href="https://discord.gg/xc5FT8XqSP" target="_blank" style="color: #026ca7; font-weight: bold; text-decoration: underline;" data-i18n="discord_link">公式Discordサーバーに参加する →</a></p>
+    </div>
+
+    <!-- GitHub Issues報告 -->
+    <div>
+        <p style="margin: 0 0 0.5rem 0; font-weight: bold; color: #026ca7;" data-i18n="github_issue_title">📋 GitHub Issuesでバグ報告</p>
+        <p style="margin: 0 0 0.5rem 0; color: #333333;" data-i18n="github_issue_desc">GitHubアカウントをお持ちの方は、不具合や要望をIssuesからも報告できます。</p>
+        <p style="margin: 0 0 0.5rem 0;"><a href="https://github.com/Siveweb/Utaun/issues" target="_blank" style="color: #026ca7; text-decoration: underline;" data-i18n="github_issue_link">Issues ページへ →</a></p>
+        <p style="margin: 0.5rem 0 0.2rem 0; font-weight: bold; color: #333333;" data-i18n="report_items_title">報告の際に記載いただきたい内容：</p>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #333333;">
+            <li data-i18n="report_item_1">お使いのOSとバージョン（例：Windows 11）</li>
+            <li data-i18n="report_item_2">Utaunのバージョン（例：v1.0.9）</li>
+            <li data-i18n="report_item_3">不具合の再現手順</li>
+            <li data-i18n="report_item_4">エラーメッセージ（表示された場合）</li>
+        </ul>
+    </div>
+</section>
+
 <div style="text-align: center; margin: 2rem 0 1rem 0;">
     <a href="https://github.com/Siveweb/Utaun" class="dl-btn" target="_blank" rel="noopener noreferrer" id="github-btn" data-i18n="btn_github" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
         <svg height="16" width="16" viewBox="0 0 16 16" style="fill: currentColor; vertical-align: middle;"><path d="M8 0c4.42 0 8 3.58 8 8a8 8 0 0 1-5.38 7.59c-.4.07-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82A7.64 7.64 0 0 0 8 3c-.68 0-1.36.09-2 .28-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
@@ -556,6 +566,17 @@ terms_body_4: "【生成物について】",
 terms_body_5: "（音源・wav・icon.jpg / icon.bmp・<code>oto.ini</code> など）<br>利用規約は、あなた（配布者）が自由に設定できます。<code>readme.txt</code> にお好きな規約を書いてください。",
 terms_effective_date: "本規約は2026年10月6日より適用します。",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 公式Discordサーバー",
+discord_desc: "改造コードの共有、プラグインの報告、開発者同士の交流や相談は公式Discordで受け付けています！",
+discord_link: "公式Discordサーバーに参加する →",
+github_issue_title: "📋 GitHub Issuesでバグ報告",
+github_issue_desc: "GitHubアカウントをお持ちの方は、不具合や要望をIssuesからも報告できます。",
+github_issue_link: "Issues ページへ →",
+report_items_title: "報告の際に記載いただきたい内容：",
+report_item_1: "お使いのOSとバージョン（例：Windows 11）",
+report_item_2: "Utaunのバージョン（例：v1.0.9）",
+report_item_3: "不具合の再現手順",
+report_item_4: "エラーメッセージ（表示された場合）",
 btn_github: "View on Github"
 },
 en: {
@@ -599,6 +620,17 @@ terms_body_4: "[About Generated Outputs]",
 terms_body_5: "(Voicebanks, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>You (the distributor) are free to set your own terms of use in <code>readme.txt</code>.",
 terms_effective_date: "These terms apply starting October 6, 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Official Discord Server",
+discord_desc: "Share modified code, report plugins, and chat or consult with other developers on the official Discord!",
+discord_link: "Join the Official Discord Server →",
+github_issue_title: "📋 Bug Reports via GitHub Issues",
+github_issue_desc: "If you have a GitHub account, you can also report bugs and requests via Issues.",
+github_issue_link: "Go to Issues Page →",
+report_items_title: "Information to include when reporting:",
+report_item_1: "OS and version (e.g., Windows 11)",
+report_item_2: "Utaun version (e.g., v1.0.9)",
+report_item_3: "Steps to reproduce the issue",
+report_item_4: "Error message (if displayed)",
 btn_github: "View on GitHub"
 },
 ko: {
@@ -642,6 +674,17 @@ terms_body_4: "[생산물 정보]",
 terms_body_5: "(음원, wav, icon.jpg / icon.bmp, <code>oto.ini</code> 등)<br>이용 약관은 귀하(배포자)가 자유롭게 설정할 수 있습니다. <code>readme.txt</code>에 원하는 약관을 작성해 주세요.",
 terms_effective_date: "본 약관은 2026년 10월 6일부터 적용됩니다.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 공식 Discord 서버",
+discord_desc: "개조 코드 공유, 플러그인 보고, 개발자 간 교류 및 상담은 공식 Discord에서 받고 있습니다!",
+discord_link: "공식 Discord 서버 참여하기 →",
+github_issue_title: "📋 GitHub Issues를 통한 버그 신고",
+github_issue_desc: "GitHub 계정이 있으신 분은 Issues를 통해서도 버그나 요청사항을 신고하실 수 있습니다.",
+github_issue_link: "Issues 페이지로 이동 →",
+report_items_title: "신고 시 기재해주셔야 할 내용:",
+report_item_1: "사용 중인 OS 및 버전 (예: Windows 11)",
+report_item_2: "Utaun 버전 (예: v1.0.9)",
+report_item_3: "오류 재현 절차",
+report_item_4: "오류 메시지 (표시된 경우)",
 btn_github: "View on GitHub"
 },
 "zh-cn": {
@@ -691,6 +734,17 @@ m_2: "<strong>文档要求：</strong> 必须随附官方 README（或其翻译�
 m_3: "<strong>保持原样：</strong> 禁止修改、编辑、改造或反编译程序。仅可分发来自 GitHub 的原始文件。",
 m_4: "<strong>禁止商用：</strong> 严禁用于任何营利性目的。",
 m_5: "<strong>报告义务：</strong> 开始分发后，请通过电子邮件（0329.mth@gmail.com）向我们报告。",
+discord_title: "💬 官方 Discord 服务器",
+discord_desc: "分享修改代码、报告插件、与其他开发者交流或咨询，欢迎加入官方 Discord！",
+discord_link: "加入官方 Discord 服务器 →",
+github_issue_title: "📋 通过 GitHub Issues 报告 Bug",
+github_issue_desc: "如果您拥有 GitHub 账号，也可以通过 Issues 报告故障或提出建议。",
+github_issue_link: "前往 Issues 页面 →",
+report_items_title: "报告时请提供以下内容：",
+report_item_1: "您的操作系统及版本（例：Windows 11）",
+report_item_2: "Utaun 版本（例：v1.0.9）",
+report_item_3: "故障复现步骤",
+report_item_4: "错误信息（如有显示）",
 btn_github: "View on GitHub"
 },
 "zh-tw": {
@@ -734,6 +788,17 @@ terms_body_4: "【關於生成物】",
 terms_body_5: "（音源、wav、icon.jpg / icon.bmp、<code>oto.ini</code> 等）<br>使用條款可由您（發布者）自由設定。請在 <code>readme.txt</code> 中寫下您喜歡的條款。",
 terms_effective_date: "本條款自 2026 年 10 月 6 日起適用。",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 官方 Discord 伺服器",
+discord_desc: "分享修改程式碼、回報外掛、與其他開發者交流或諮詢，歡迎加入官方 Discord！",
+discord_link: "加入官方 Discord 伺服器 →",
+github_issue_title: "📋 透過 GitHub Issues 回報 Bug",
+github_issue_desc: "如果您擁有 GitHub 帳號，也可以透過 Issues 回報故障或提出建議。",
+github_issue_link: "前往 Issues 頁面 →",
+report_items_title: "回報時請提供以下內容：",
+report_item_1: "您的作業系統及版本（例：Windows 11）",
+report_item_2: "Utaun 版本（例：v1.0.9）",
+report_item_3: "故障重現步驟",
+report_item_4: "錯誤訊息（如有顯示）",
 btn_github: "View on GitHub"
 },
 "zh-hk": {
@@ -783,6 +848,17 @@ m_2: "<strong>文檔要求：</strong> 必須隨附官方 README（或其翻譯�
 m_3: "<strong>保持原樣：</strong> 禁止修改、編輯、改造或反編譯程序。僅可分發來自 GitHub 的原始文件。",
 m_4: "<strong>禁止商用：</strong> 嚴禁用於任何營利性目的。",
 m_5: "<strong>報告義務：</strong> 開始分發後，請透過電子郵件（0329.mth@gmail.com）向我們報告。",
+discord_title: "💬 官方 Discord 服務器",
+discord_desc: "分享修改代碼、回報插件、同其他開發者交流或諮詢，歡迎加入官方 Discord！",
+discord_link: "加入官方 Discord 服務器 →",
+github_issue_title: "📋 透過 GitHub Issues 回報 Bug",
+github_issue_desc: "如果你擁有 GitHub 帳號，亦都可以透過 Issues 回報故障或提出建議。",
+github_issue_link: "前往 Issues 頁面 →",
+report_items_title: "回報時請提供以下內容：",
+report_item_1: "你使用緊嘅作業系統及版本（例：Windows 11）",
+report_item_2: "Utaun 版本（例：v1.0.9）",
+report_item_3: "故障重現步驟",
+report_item_4: "錯誤訊息（如有顯示）",
 btn_github: "View on GitHub"
 },
 ru: {
@@ -832,6 +908,17 @@ m_2: "<strong>Документация:</strong> Обязательно прил
 m_3: "<strong>Оригинальные файлы:</strong> Запрещено модифицировать, редактировать, переделывать или декомпилировать программу.",
 m_4: "<strong>Коммерческое использование запрещено.</strong>",
 m_5: "<strong>Обязательство по отчетности:</strong> Сообщите нам по электронной почте (0329.mth@gmail.com).",
+discord_title: "💬 Официальный сервер Discord",
+discord_desc: "Делитесь измененным кодом, сообщайте о плагинах и общайтесь с другими разработчиками в официальном Discord!",
+discord_link: "Присоединиться к официальному Discord →",
+github_issue_title: "📋 Сообщить об ошибке через GitHub Issues",
+github_issue_desc: "Если у вас есть аккаунт GitHub, вы также можете сообщить о проблемах и пожеланиях через Issues.",
+github_issue_link: "Перейти к странице Issues →",
+report_items_title: "Что нужно указать при составлении отчета:",
+report_item_1: "Ваша ОС и версия (например, Windows 11)",
+report_item_2: "Версия Utaun (например, v1.0.9)",
+report_item_3: "Шаги для воспроизведения проблемы",
+report_item_4: "Сообщение об ошибке (если оно появилось)",
 btn_github: "View on GitHub"
 },
 pt: {
@@ -875,6 +962,17 @@ terms_body_4: "[Sobre as Saídas Geradas]",
 terms_body_5: "(Bancos de voz, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>Você (o distribuidor) é livre para definir seus próprios termos de uso no arquivo <code>readme.txt</code>.",
 terms_effective_date: "Estes termos entram em vigor em 6 de outubro de 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Servidor Oficial do Discord",
+discord_desc: "Compartilhe código modificado, relate plugins e converse ou consulte outros desenvolvedores no Discord oficial!",
+discord_link: "Entrar no Servidor Oficial do Discord →",
+github_issue_title: "📋 Relatar Bugs via GitHub Issues",
+github_issue_desc: "Se você tiver uma conta no GitHub, também pode relatar problemas e pedidos via Issues.",
+github_issue_link: "Ir para a página de Issues →",
+report_items_title: "Informações a incluir ao relatar:",
+report_item_1: "SO e versão (ex: Windows 11)",
+report_item_2: "Versão do Utaun (ex: v1.0.9)",
+report_item_3: "Passos para reproduzir o problema",
+report_item_4: "Mensagem de erro (se exibida)",
 btn_github: "View on GitHub"
 },
 es: {
@@ -918,6 +1016,17 @@ terms_body_4: "[Sobre los archivos generados]",
 terms_body_5: "(Bancos de voz, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>Usted (el distribuidor) puede establecer libremente sus propias reglas en <code>readme.txt</code>.",
 terms_effective_date: "Estos términos se aplican a partir del 6 de octubre de 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Servidor oficial de Discord",
+discord_desc: "¡Comparte código modificado, reporta plugins y chatea o consulta con otros desarrolladores en el Discord oficial!",
+discord_link: "Unirse al servidor oficial de Discord →",
+github_issue_title: "📋 Reportar bugs vía GitHub Issues",
+github_issue_desc: "Si tienes una cuenta de GitHub, también puedes reportar fallos y peticiones a través de Issues.",
+github_issue_link: "Ir a la página de Issues →",
+report_items_title: "Información a incluir al reportar:",
+report_item_1: "SO y versión (ej. Windows 11)",
+report_item_2: "Versión de Utaun (ej. v1.0.9)",
+report_item_3: "Pasos para reproducir el fallo",
+report_item_4: "Mensaje de error (si se muestra)",
 btn_github: "View on GitHub"
 },
 fr: {
@@ -961,6 +1070,17 @@ terms_body_4: "[À propos des éléments générés]",
 terms_body_5: "(Banches de voix, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, etc.)<br>Vous (le distributeur) êtes libre de définir vos propres règles dans <code>readme.txt</code>.",
 terms_effective_date: "Ces conditions s'appliquent à compter du 6 octobre 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Serveur Discord officiel",
+discord_desc: "Partagez du code modifié, signalez des plugins, discutez et consultez d'autres développeurs sur le Discord officiel !",
+discord_link: "Rejoindre le serveur Discord officiel →",
+github_issue_title: "📋 Signaler un bug via GitHub Issues",
+github_issue_desc: "Si vous possédez un compte GitHub, vous pouvez également signaler des bugs et des demandes via Issues.",
+github_issue_link: "Aller à la page Issues →",
+report_items_title: "Informations à inclure lors du signalement :",
+report_item_1: "OS et version (ex : Windows 11)",
+report_item_2: "Version d'Utaun (ex : v1.0.9)",
+report_item_3: "Étapes pour reproduire le problème",
+report_item_4: "Message d'erreur (si affiché)",
 btn_github: "View on GitHub"
 },
 it: {
@@ -1004,6 +1124,17 @@ terms_body_4: "[Informazioni sui file generati]",
 terms_body_5: "(Banchi vocali, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, ecc.)<br>L'utente (il distributore) è libero di impostare le proprie regole d'uso in <code>readme.txt</code>.",
 terms_effective_date: "I presenti termini si applicano a partire dal 6 ottobre 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Server Discord ufficiale",
+discord_desc: "Condividi codice modificato, segnala plugin, chatta o chiedi consiglio ad altri sviluppatori sul Discord ufficiale!",
+discord_link: "Unisciti al server Discord ufficiale →",
+github_issue_title: "📋 Segnala bug tramite GitHub Issues",
+github_issue_desc: "Se hai un account GitHub, puoi anche segnalare bug e richieste tramite Issues.",
+github_issue_link: "Vai alla pagina Issues →",
+report_items_title: "Informazioni da includere nella segnalazione:",
+report_item_1: "SO e versione (es. Windows 11)",
+report_item_2: "Versione di Utaun (es. v1.0.9)",
+report_item_3: "Passaggi per riprodurre il problema",
+report_item_4: "Messaggio di errore (se mostrato)",
 btn_github: "View on GitHub"
 },
 de: {
@@ -1047,6 +1178,17 @@ terms_body_4: "[Über erstellte Inhalte]",
 terms_body_5: "(Voicebanks, wav, icon.jpg / icon.bmp, <code>oto.ini</code> etc.)<br>Sie (der Verteiler) können Ihre eigenen Regeln frei in <code>readme.txt</code> festlegen.",
 terms_effective_date: "Diese Bedingungen gelten ab dem 6. Oktober 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Offizieller Discord-Server",
+discord_desc: "Teilen Sie modifizierten Code, melden Sie Plugins und chatten oder beraten Sie sich mit anderen Entwicklern im offiziellen Discord!",
+discord_link: "Dem offiziellen Discord-Server beitreten →",
+github_issue_title: "📋 Bug-Berichte über GitHub Issues",
+github_issue_desc: "Wenn Sie ein GitHub-Konto haben, können Sie Probleme und Wünsche auch über Issues melden.",
+github_issue_link: "Zur Issues-Seite →",
+report_items_title: "Angaben, die beim Melden enthalten sein sollten:",
+report_item_1: "Betriebssystem und Version (z. B. Windows 11)",
+report_item_2: "Utaun-Version (z. B. v1.0.9)",
+report_item_3: "Schritte zur Reproduktion des Fehlers",
+report_item_4: "Fehlermeldung (falls angezeigt)",
 btn_github: "View on GitHub"
 },
 pl: {
@@ -1090,6 +1232,17 @@ terms_body_4: "[O materiałach wyjściowych]",
 terms_body_5: "(Banki głosów, wav, icon.jpg / icon.bmp, <code>oto.ini</code> itp.)<br>Ty (dystrybutor) możesz określić warunki w pliku <code>readme.txt</code>.",
 terms_effective_date: "Niniejsze warunki wchodzą w życie 6 października 2026 r.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Oficjalny serwer Discord",
+discord_desc: "Dziel się zmodyfikowanym kodem, zgłaszaj wtyczki, rozmawiaj i konsultuj się z innymi deweloperami na oficjalnym Discordzie!",
+discord_link: "Dołącz do oficjalnego serwera Discord →",
+github_issue_title: "📋 Zgłaszanie błędów przez GitHub Issues",
+github_issue_desc: "Jeśli masz konto GitHub, możesz również zgłaszać problemy i prośby przez Issues.",
+github_issue_link: "Przejdź do strony Issues →",
+report_items_title: "Informacje, które należy uwzględnić przy zgłaszaniu:",
+report_item_1: "System operacyjny i wersja (np. Windows 11)",
+report_item_2: "Wersja Utaun (np. v1.0.9)",
+report_item_3: "Kroki prowadzące do odtworzenia błędu",
+report_item_4: "Komunikat o błędzie (jeśli się pojawił)",
 btn_github: "View on GitHub"
 },
 tr: {
@@ -1113,26 +1266,37 @@ uc_5: "ZIP'i açıp doğrudan insansı Vocaloid materyali olarak kullanma",
 uc_6: "OtoMAD / YTPMV gibi içerikler için malzeme olarak kullanma",
 manual_title: "Nasıl Kullanılır?",
 step_1: "Tercih ettiğiniz 'Installer' veya 'ZIP' sürümünü indirin.",
-step_2_installer: "<strong>[Yükleyici sürümü için]</strong> Yükleyiciyi çalıştırın und talimatları izleyin.",
+step_2_installer: "<strong>[Yükleyici sürümü için]</strong> Yükleyiciyi çalıştırın ve talimatları izleyin.",
 step_2_zip: "<strong>[ZIP sürümü için]</strong> '子音部・濁音部フォルダ' ve <code>oto.ini</code> dosyasını doğrudan 'Belgeler' klasörünüze yerleştirin.",
-step_3: "Utaun'u başlatın und ses bankanızı oluşturmak için ekrandaki talimatları izleyin.",
+step_3: "Utaun'u başlatın ve ses bankanızı oluşturmak için ekrandaki talimatları izleyin.",
 step_4: "ZIP çıktısı veya UTAU ile OpenUTAU'ya doğrudan klasör dışa aktarımı arasında seçim yapın.",
 step_4_note: "* Otomatik güncelleme özellikleri sonraki sürümlerde sunulacaktır.",
 terms_title: "Kullanım Koşulları (Terms of Use)",
 terms_body_1: "[Utaun Yazılımı Hakkında]",
 terms_body_2: "Utaun açık kaynaklıdır. Herkesin kodu serbestçe yeniden yazması veya eklentiler (plugin) oluşturması memnuniyetle karşılanır! Ancak güvenli bir işletimi sağlamak ve finansal çıkar amaçlı kötüye kullanımı önlemek için lütfen aşağıdaki kurallara uyun:",
 terms_body_copyright_title: "■ Telif Hakkı",
-terms_body_copyright_desc: "Utaun çekirdeğinin ve gelecekteki resmi güncellemelerde benimsenen kodların telif hakkı, tüm katılımcı geliştiricileri içeren yazılım geliştirme projesi 'SiveProject'e aittir.",
+terms_body_copyright_desc: "Utaun çekirdeğinin und gelecekteki resmi güncellemelerde benimsenen kodların telif hakkı, tüm katılımcı geliştiricileri içeren yazılım geliştirme projesi 'SiveProject'e aittir.",
 terms_body_prohibit_title: "■ Yasak Eylemler",
 terms_body_prohibit_list: "· Ticari kullanım (ücretli dağıtım, bu yazılımı kullanarak kâr amacı güden faaliyetler vb.)<br>· Kötü amaçlı kullanım için virüs, truva atı, kötü amaçlı yazılım vb. entegre etmek<br>· Bu yazılımı resmi kanallar (GitHub: SiveProject) dışında yeniden dağıtmak (izin verilen aynalar hariç)",
-terms_body_rule_title: "■ Kod Düzenleme ve Eklenti Oluşturma Kuralları",
-terms_body_rule_desc: "· [Nasıl düzenlenir] Kod düzenlemek için GitHub'dan '.py' dosyalarını indirin ve bilgisayarınız gibi yerel ortamınızda deneyler yapın.<br>· Değiştirilmiş çekirdekleri veya eklentileri resmi izin almadan genel halka dağıtmayın.<br>· Resmi Discord sunucusunda ekran görüntüleri veya videolar paylaşın!<br>· [Önemli] Değiştirilmiş kaynak kodunu resmi bir sürüm için '.exe', '.app' gibi uygulama formatlarında derlemek istiyorsanız, bu resmi Discord'da önceden tartışarak kararlaştırılır.",
+terms_body_rule_title: "■ Kod Düzenleme und Eklenti Oluşturma Kuralları",
+terms_body_rule_desc: "· [Nasıl düzenlenir] Kod düzenlemek için GitHub'dan '.py' dosyalarını indirin und bilgisayarınız gibi yerel ortamınızda deneyler yapın.<br>· Değiştirilmiş çekirdekleri veya eklentileri resmi izin almadan genel halka dağıtmayın.<br>· Resmi Discord sunucusunda ekran görüntüleri veya videolar paylaşın!<br>· [Önemli] Değiştirilmiş kaynak kodunu resmi bir sürüm için '.exe', '.app' gibi uygulama formatlarında derlemek istiyorsanız, bu resmi Discord'da önceden tartışarak kararlaştırılır.",
 terms_body_warning_title: "⚠️ Uyarı",
-terms_body_warning_desc: "Yazar ve proje ortakları, resmi olmayan yerlerden indirilen 'Utaun' için hiçbir sorumluluk kabul etmez. Güvenlik için lütfen her zaman resmi GitHub'dan indirin.",
+terms_body_warning_desc: "Yazar und proje ortakları, resmi olmayan yerlerden indirilen 'Utaun' için hiçbir sorumluluk kabul etmez. Güvenlik için lütfen her zaman resmi GitHub'dan indirin.",
 terms_body_4: "[Üretilen Çıktılar Hakkında]",
 terms_body_5: "(Ses bankaları, wav, icon.jpg / icon.bmp, <code>oto.ini</code> vb.)<br>Siz (dağıtıcı) koşulları <code>readme.txt</code> dosyasına yazabilirsiniz.",
 terms_effective_date: "Bu koşullar 6 Ekim 2026 itibarıyla geçerlidir.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Resmi Discord Sunucusu",
+discord_desc: "Değiştirilmiş kodları paylaşmak, eklentileri bildirmek, diğer geliştiricilerle iletişim kurmak ve danışmak için resmi Discord'a katılın!",
+discord_link: "Resmi Discord Sunucusuna Katıl →",
+github_issue_title: "📋 GitHub Issues ile Hata Bildirimi",
+github_issue_desc: "GitHub hesabınız varsa, hataları ve istekleri Issues üzerinden de bildirebilirsiniz.",
+github_issue_link: "Issues Sayfasına Git →",
+report_items_title: "Bildirim sırasında eklemeniz gereken bilgiler:",
+report_item_1: "İşletim sisteminiz ve versiyonu (örn. Windows 11)",
+report_item_2: "Utaun versiyonu (örn. v1.0.9)",
+report_item_3: "Sorunu yeniden oluşturma adımları",
+report_item_4: "Hata mesajı (görüntülendiyse)",
 btn_github: "View on GitHub"
 },
 vi: {
@@ -1176,6 +1340,17 @@ terms_body_4: "[Về sản phẩm tạo ra]",
 terms_body_5: "(Ngân hàng giọng nói, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, v.v.)<br>Bạn có thể tự do đặt điều khoản trong <code>readme.txt</code>.",
 terms_effective_date: "Các điều khoản này có hiệu lực từ ngày 6 tháng 10 năm 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Máy chủ Discord chính thức",
+discord_desc: "Chia sẻ mã đã chỉnh sửa, báo cáo plugin, trò chuyện và thảo luận với các nhà phát triển khác trên Discord chính thức!",
+discord_link: "Tham gia máy chủ Discord chính thức →",
+github_issue_title: "📋 Báo cáo lỗi qua GitHub Issues",
+github_issue_desc: "Nếu bạn có tài khoản GitHub, bạn cũng có thể báo cáo sự cố và yêu cầu qua Issues.",
+github_issue_link: "Đi tới trang Issues →",
+report_items_title: "Thông tin cần cung cấp khi báo cáo:",
+report_item_1: "Hệ điều hành và phiên bản (ví dụ: Windows 11)",
+report_item_2: "Phiên bản Utaun (ví dụ: v1.0.9)",
+report_item_3: "Các bước để tái hiện sự cố",
+report_item_4: "Thông báo lỗi (nếu có)",
 btn_github: "View on GitHub"
 },
 fil: {
@@ -1219,6 +1394,17 @@ terms_body_4: "[Tungkol sa mga Nalikhang Awput]",
 terms_body_5: "(Voicebanks, wav, icon.jpg / icon.bmp, <code>oto.ini</code>, atbp.)<br>Malaya kang magtakda ng sarili mong tuntunin sa <code>readme.txt</code>.",
 terms_effective_date: "Ang mga tuntuning ito ay magse-set in sa Oktubre 6, 2026.",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Opisyal na Discord Server",
+discord_desc: "Magbahagi ng binagong code, mag-ulat ng mga plugin, at makipag-chat o kumunsulta sa iba pang mga developer sa opisyal na Discord!",
+discord_link: "Sumali sa Opisyal na Discord Server →",
+github_issue_title: "📋 Pag-uulat ng Bug sa pamamagitan ng GitHub Issues",
+github_issue_desc: "Kung mayroon kang GitHub account, maaari mo ring iulat ang mga isyu at kahilingan sa pamamagitan ng Issues.",
+github_issue_link: "Pumunta sa Issues Page →",
+report_items_title: "Impormasyon na dapat ilagay kapag nag-uulat:",
+report_item_1: "OS at bersyon (hal. Windows 11)",
+report_item_2: "Bersyon ng Utaun (hal. v1.0.9)",
+report_item_3: "Mga hakbang upang kopyahin ang isyu",
+report_item_4: "Mensaje ng error (kung ipinapakita)",
 btn_github: "View on GitHub"
 },
 th: {
@@ -1262,11 +1448,21 @@ terms_body_4: "[เกี่ยวกับผลลัพธ์ที่สร�
 terms_body_5: "(คลังเสียง, wav, icon.jpg / icon.bmp, <code>oto.ini</code> ฯลฯ)<br>คุณสามารถกำหนดเงื่อนไขใน <code>readme.txt</code>",
 terms_effective_date: "เงื่อนไขเหล่านี้มีผลบังคับใช้ตั้งแต่วันที่ 6 ตุลาคม 2026 เป็นต้นไป",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
+discord_title: "💬 Discord เซิร์ฟเวอร์ทางการ",
+discord_desc: "แบ่งปันโค้ดที่แก้ไข, รายงานปลั๊กอิน, พูดคุยหรือปรึกษากับนักพัฒนาคนอื่นๆ บน Discord ทางการ!",
+discord_link: "เข้าร่วม Discord เซิร์ฟเวอร์ทางการ →",
+github_issue_title: "📋 รายงาน Bug ผ่าน GitHub Issues",
+github_issue_desc: "หากคุณมีบัญชี GitHub คุณสามารถรายงานปัญหาและความต้องการผ่าน Issues ได้เช่นกัน",
+github_issue_link: "ไปยังหน้า Issues →",
+report_items_title: "ข้อมูลที่ควรระบุเมื่อรายงาน:",
+report_item_1: "OS และเวอร์ชัน (เช่น Windows 11)",
+report_item_2: "เวอร์ชัน Utaun (เช่น v1.0.9)",
+report_item_3: "ขั้นตอนในการจำลองปัญหา",
+report_item_4: "ข้อความแสดงข้อผิดพลาด (หากมี)",
 btn_github: "View on GitHub"
 }
 };
 
-// 各言語ごとのREADMEミラー用ファイルパスの設定
 const readmeFiles = {
     "zh-cn": "./READMEmirror/README_MIRROR_cn.md",
     "zh-hk": "./READMEmirror/README_MIRRORzh_hk.md",
@@ -1277,10 +1473,8 @@ function changeLanguage(lang) {
 const targetLang = (lang === 'en-us') ? 'en' : (translations[lang] ? lang : 'ja');
 const t = translations[targetLang] || translations['ja'];
 
-// ページのタイトルを反映
 document.getElementById('page-title').innerText = t.title;
 
-// data-i18n 属性を持つすべての要素を自動で一括書き換え
 document.querySelectorAll('[data-i18n]').forEach(el => {
 const key = el.getAttribute('data-i18n');
 if (t[key] !== undefined && t[key] !== "") {
@@ -1288,7 +1482,6 @@ el.innerHTML = t[key];
 }
 });
 
-// ミラー規約ボックスの表示切替（ロシア・簡体字・香港広東語のとき）
 const mirrorBox = document.getElementById('mirrorBox');
 if (mirrorBox) {
 if (['ru', 'zh-cn', 'zh-hk'].includes(targetLang) && t.mirror_title) {
@@ -1298,12 +1491,10 @@ mirrorBox.style.display = 'none';
 }
 }
 
-// READMEダウンロードボタンの表示切替とリンクの動的変更
 const readmeDlBtn = document.getElementById('readme-dl-btn');
 if (readmeDlBtn) {
 if (['zh-cn', 'zh-hk', 'ru'].includes(targetLang)) {
 readmeDlBtn.style.display = 'inline-block';
-// 言語に応じたファイルパスに書き換え
 const filePath = readmeFiles[targetLang] || "./README.md";
 readmeDlBtn.setAttribute('href', filePath);
 readmeDlBtn.setAttribute('download', filePath.split('/').pop());
@@ -1312,21 +1503,18 @@ readmeDlBtn.style.display = 'none';
 }
 }
 
-// 日本語（ja）のときだけ姉妹サイトボックスを表示
 const sisterSiteBox = document.getElementById('sisterSiteBox');
 if (sisterSiteBox) {
 sisterSiteBox.style.display = (targetLang === 'ja') ? 'block' : 'none';
 }
 }
 
-// ページ読み込み時の初期化処理
 const savedLang = localStorage.getItem('utaun_lang') || 'ja';
 const langSelect = document.getElementById('langSelect');
 if (langSelect) {
 langSelect.value = savedLang;
 changeLanguage(savedLang);
 
-// セレクトボックス変更時の処理
 langSelect.addEventListener('change', (e) => {
 const lang = e.target.value;
 localStorage.setItem('utaun_lang', lang);
@@ -1334,7 +1522,6 @@ changeLanguage(lang);
 });
 }
 
-// 別タブや別画面でストレージが変更されたときの同期
 window.addEventListener('storage', (e) => {
 if (e.key === 'utaun_lang' && e.newValue) {
 if (langSelect) langSelect.value = e.newValue;
