@@ -18,14 +18,13 @@
       -webkit-text-stroke: 0.1px currentColor !important;
       text-stroke: 0.1px currentColor !important;
     }
-/* html・bodyの背景色をウィンドウと同じ薄い水色(#f0f8ff)にして隙間をなくす */
+/* html・body全体の余白を完全に消し、背景色をウィンドウと同じ薄い水色(#f0f8ff)にする */
 html, body {
 background-color: #f0f8ff;
 color: #000000;
 margin: 0;
 padding: 0;
 width: 100%;
-line-height: 1.6;
 min-height: 100vh;
 box-sizing: border-box;
 }
@@ -36,6 +35,7 @@ box-sizing: border-box;
 width: 100%;
 background-color: #f0f8ff;
 border: none;
+box-shadow: none;
 border-radius: 0px;
 overflow: hidden;
 display: flex;
@@ -80,7 +80,7 @@ color: #000000;
 font-weight: bold;
 cursor: pointer;
 }
-/* ツールバーエリア */
+/* ツールバーエリア (ui-gallery.htmlと完全一致) */
 .browser-toolbar {
 background-color: #e2f4fd;
 border-bottom: 2px solid #09A3F2;
@@ -97,30 +97,25 @@ gap: 4px;
 width: 100%;
 min-width: 0;
 }
+.nav-links {
+display: flex;
+gap: 2px;
+list-style: none;
+margin: 0;
+padding: 0;
+flex-shrink: 1;
+min-width: 0;
+}
+.nav-links li {
+flex-shrink: 1;
+min-width: 0;
+}
 .nav-links a {
 display: block;
 text-decoration: none;
 color: #000000;
 font-size: 0.85rem;
 padding: 2px 6px;
-border: 1px solid;
-border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
-background-color: #ffffff;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-}
-.nav-links li {
-flex-shrink: 1;
-min-width: 0;
-}
-/* 他のページとサイズを揃えてスリムに修正 */
-.nav-links a {
-display: block;
-text-decoration: none;
-color: #000000;
-font-size: 0.8rem;
-padding: 2px 5px;
 border: 1px solid;
 border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
 background-color: #ffffff;
@@ -145,7 +140,6 @@ overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
 }
-/* プルダウンの固定幅設定 */
 .lang-select {
 background-color: #ffffff;
 color: #000000;
@@ -156,11 +150,12 @@ font-size: 0.8rem;
 width: 82px;
 flex-shrink: 0;
 }
-/* メインコンテンツ */
+/* メインコンテンツ (ui-gallery.htmlと完全一致) */
 .container {
 padding: 1.5rem;
 background-color: #ffffff;
 flex-grow: 1;
+overflow-y: auto;
 word-break: break-word;
 }
 .hero-header {
