@@ -202,23 +202,26 @@ font-size: 1.3rem;
 color: #026ca7;
 }
 .dl-buttons {
-display: flex;
-gap: 1rem;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 1rem;
+  display: flex;
+  flex-direction: column; /* 縦並びに変更 */
+  gap: 0.8rem; /* ボタン同士の間隔 */
+  justify-content: center;
+  align-items: stretch; /* ボタンの幅をコンテナいっぱいに合わせる */
+  margin-top: 1rem;
 }
 .dl-btn {
-display: inline-block;
-background-color: #ffffff;
-color: #000000;
-font-weight: bold;
-font-size: 0.9rem;
-padding: 0.6rem 1.5rem;
-text-decoration: none;
-border: 2px solid;
-border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
-white-space: nowrap;
+  display: block;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  text-align: center; /* テキストを中央揃えに */
+  border: 2px solid;
+  border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
+  width: 100%; /* 横幅を100%にして綺麗に縦に並べる */
+  box-sizing: border-box;
 }
 .dl-btn:active {
 border-color: #09A3F2 #ffffff #ffffff #09A3F2;
