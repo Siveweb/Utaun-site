@@ -80,7 +80,7 @@ color: #000000;
 font-weight: bold;
 cursor: pointer;
 }
-/* ツールバーエリア (ui-gallery.htmlと完全一致) */
+/* ツールバーエリア */
 .browser-toolbar {
 background-color: #e2f4fd;
 border-bottom: 2px solid #09A3F2;
@@ -150,7 +150,7 @@ font-size: 0.8rem;
 width: 82px;
 flex-shrink: 0;
 }
-/* メインコンテンツ (ui-gallery.htmlと完全一致) */
+/* メインコンテンツ */
 .container {
 padding: 1.5rem;
 background-color: #ffffff;
@@ -201,27 +201,28 @@ margin-top: 0;
 font-size: 1.3rem;
 color: #026ca7;
 }
+/* ボタンを縦並びにして幅をきれいに揃える */
 .dl-buttons {
-  display: flex;
-  flex-direction: column; /* 縦並びに変更 */
-  gap: 0.8rem; /* ボタン同士の間隔 */
-  justify-content: center;
-  align-items: stretch; /* ボタンの幅をコンテナいっぱいに合わせる */
-  margin-top: 1rem;
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+justify-content: center;
+align-items: stretch;
+margin-top: 1rem;
 }
 .dl-btn {
-  display: block;
-  background-color: #ffffff;
-  color: #000000;
-  font-weight: bold;
-  font-size: 0.9rem;
-  padding: 0.8rem 1rem;
-  text-decoration: none;
-  text-align: center; /* テキストを中央揃えに */
-  border: 2px solid;
-  border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
-  width: 100%; /* 横幅を100%にして綺麗に縦に並べる */
-  box-sizing: border-box;
+display: block;
+background-color: #ffffff;
+color: #000000;
+font-weight: bold;
+font-size: 0.9rem;
+padding: 0.8rem 1rem;
+text-decoration: none;
+text-align: center;
+border: 2px solid;
+border-color: #ffffff #09A3F2 #09A3F2 #ffffff;
+width: 100%;
+box-sizing: border-box;
 }
 .dl-btn:active {
 border-color: #09A3F2 #ffffff #ffffff #09A3F2;
@@ -396,7 +397,7 @@ A:\ UTAUN \ WELCOME. HTM
 <div class="dl-buttons">
 <a href="./Utaun/Utaun ver-1.0.9.zip" class="dl-btn" target="_blank" data-i18n="btn_zip">ZIP版をDL</a>
 <a href="./Utaun/Utaun_1.0.9_Installer.exe" class="dl-btn" target="_blank" data-i18n="btn_installer">インストーラー版をDL</a>
-<a href="./Utaun/Utaun pyFiles.zip" class="dl-btn" target="_blank" data-i18n="btn_python">iOS・Android版PythonファイルをDL</a>
+<a href="./Utaun/Utaun_Android_CUI.py" class="dl-btn" target="_blank" data-i18n="btn_python">iOS・Android版PythonファイルをDL</a>
 <a href="./README.md" class="dl-btn" download="README.md" id="readme-dl-btn" style="display: none;" data-i18n="btn_readme">READMEをDL</a>
 </div>
 <div>
@@ -463,14 +464,13 @@ A:\ UTAUN \ WELCOME. HTM
 <p><strong data-i18n="terms_body_copyright_title">■ 著作権について</strong><br>
 <span data-i18n="terms_body_copyright_desc">Utaun 本体の著作権、およびこれからの公式アップデートにおいて採用されたコード（書き換え）の著作権は、それらに関わる開発者全員を含めた本ソフトウェアの開発プロジェクト「SiveProject」に帰属します。</span></p>
 <p><strong data-i18n="terms_body_prohibit_title">■ 禁止事項</strong><br>
-<span data-i18n="terms_body_prohibit_list">・商用利用（有償での配布、本ソフトを用いた営利活動など、お金儲け行為全般）<br>・ウイルス、トロイの木馬、マルウェア等を仕込んで悪用する行為<br>・公式（GitHub: SiveProject）以外での本ソフトの再配布（※許可されたミラー配布を除く）</span></p>
+<span data-i18n="terms_body_prohibit_list">· 商用利用（有償での配布、本ソフトを用いた営利活動など、お金儲け行為全般）<br>· ウイルス、トロイの木馬、マルウェア等を仕込んで悪用する行為<br>· 公式（GitHub: SiveProject）以外での本ソフトの再配布（※許可されたミラー配布を除く）</span></p>
 <p><strong data-i18n="terms_body_rule_title">■ コードの書き換え・プラグイン制作のルール</strong><br>
-<span data-i18n="terms_body_rule_desc">・【書き換え方法】コードを書き換える際は、GitHubから「.py」ファイルをダウンロードし、ご自身のPC等のローカル環境で書き換えて実験を行ってください。<br>・改造した本体やプラグインを、公式に無断で不特定多数へ勝手に配布しないでください。<br>・「こんな風に書き換えたよ！」「プラグイン作ったよ！」という時は、実際の実行画面（スクリーンショットや動画）を公式Discordサーバーへぜひ送ってください！<br>・【重要】改造したソースコードを「.exe」「.app」「Linux用実行ファイル」などのアプリ形式（バイナリ形式）にビルドして公式リリースしたい場合は、事前に公式Discordサーバー等で話し合って決定します。なお、その場に何人かメンバーが集まって決定した場合は、その時にいない他のメンバーの参加を待たずにビルド・リリースを進めるものとします（開発のスピードを優先するため）。</span></p>
+<span data-i18n="terms_body_rule_desc">· 【書き換え方法】コードを書き換える際は、GitHubから「.py」ファイルをダウンロードし、ご自身のPC等のローカル環境で書き換えて実験を行ってください。<br>· 改造した本体やプラグインを、公式に無断で不特定多数へ勝手に配布しないでください。<br>· 「こんな風に書き換えたよ！」「プラグイン作ったよ！」という時は、実際の実行画面（スクリーンショットや動画）を公式Discordサーバーへぜひ送ってください！<br>· 【重要】改造したソースコードを「.exe」「.app」「Linux用実行ファイル」などのアプリ形式（バイナリ形式）にビルドして公式リリースしたい場合は、事前に公式Discordサーバー等で話し合って決定します。なお、その場に何人かメンバーが集まって決定した場合は、その時にいない他のメンバーの参加を待たずにビルド・リリースを進めるものとします（開発のスピードを優先するため）。</span></p>
 <p><strong data-i18n="terms_body_warning_title">⚠️ 注意</strong><br>
 <span data-i18n="terms_body_warning_desc">公式以外の場所からダウンロードされた「Utaun」について、作者やプロジェクト所属者は一切の責任を負いません。安全のため、必ず公式のGitHub（または公式サイトのリンク）からダウンロードしてください。</span></p>
 <p style="margin-top: 1rem;"><strong data-i18n="terms_body_4">【生成物について】</strong></p>
-<p data-i18n="terms_body_5">（音源・wav・icon.jpg / icon.bmp・<code>oto.ini</code> など）
-利用規約は、あなた（配布者）が自由に設定できます。<code>readme.txt</code> にお好きな規約を書いてください。</p>
+<p data-i18n="terms_body_5">（音源・wav・icon.jpg / icon.bmp・<code>oto.ini</code> など）<br>利用規約は、あなた（配布者）が自由に設定できます。<code>readme.txt</code> にお好きな規約を書いてください。</p>
 <p style="font-size: 0.8rem; color: #666666; margin-top: 1rem;" data-i18n="terms_effective_date">本規約は2026年10月6日より適用します。</p>
 </div>
 <!-- ロシア・中国・香港向けのミラー配布特例案内ボックス -->
@@ -494,7 +494,7 @@ A:\ UTAUN \ WELCOME. HTM
 </a>
 </div>
 
-<!-- GitHub Issues & Discord 案内セクション（フッター手前） -->
+<!-- GitHub Issues & Discord 案内セクション -->
 <section style="background-color: #f7fbff; border: 1px solid #09A3F2; padding: 1rem; margin-top: 2rem; font-size: 0.85rem;">
     <!-- Discord案内 -->
     <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dashed #09A3F2;">
@@ -793,7 +793,7 @@ step_2_installer: "<strong>【Windows端】</strong> 使用安裝程式或 ZIP �
 step_2_zip: "<strong>【行動端】</strong> 將腳本與資源放入下載資料夾中。",
 step_3: "啟動 Utaun 並依照指示操作。",
 step_4: "選擇 ZIP 輸出或直接匯出。",
-step_4_note: "※ 未來版本將提供自動更新功能。",
+step_4_note: "· 未來版本將提供自動更新功能。",
 terms_title: "使用條款 (Terms of Use)",
 terms_body_1: "【關於 Utaun 本體】",
 terms_body_2: "Utaun 現已開源。歡迎大家自由修改程式碼或製作外掛！",
@@ -934,7 +934,12 @@ pt: {
 title: "Utaun - Gerador CV para Windows e Mobile",
 navHome: "Início", navGuide: "Interface", navHistory: "Histórico",
 hero_desc: "Gerador de CV para UTAU usando síntese CSM.",
-dl_title: "Baixar Utaun", btn_zip: "Baixar ZIP", btn_installer: "Baixar Instalador", btn_python: "Baixar Arquivo Python iOS/Android", btn_readme: "Baixar README", badge_platform: "Windows / Mobile",
+dl_title: "Baixar Utaun", 
+btn_zip: "Baixar ZIP", 
+btn_installer: "Baixar Instalador", 
+btn_python: "Baixar Arquivo Python iOS/Android", 
+btn_readme: "Baixar README", 
+badge_platform: "Windows / Mobile",
 about_title: "O que é?", about_text: "Software para UTAU.", adachi_box: "Sobre CSM",
 usecase_title: "Casos de Uso", uc_1: "Voz inanimada", uc_2: "Sem auto-gravação", uc_3: "Pesquisa CSM", uc_4: "Protótipos", uc_5: "Estilo Vocaloid", uc_6: "OtoMAD",
 manual_title: "Como Usar", step_1: "Baixe a versão.", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Inicie", step_4: "Exporte", step_4_note: "· Em breve.",
@@ -949,7 +954,12 @@ es: {
 title: "Utaun - Generador CV para Windows y Mobile",
 navHome: "Inicio", navGuide: "Interfaz", navHistory: "Historial",
 hero_desc: "Generador de CV para UTAU con síntesis CSM.",
-dl_title: "Descargar Utaun", btn_zip: "ZIP", btn_installer: "Instalador", btn_python: "Descargar Archivo Python iOS/Android", btn_readme: "README", badge_platform: "Windows / Mobile",
+dl_title: "Descargar Utaun", 
+btn_zip: "Descargar ZIP", 
+btn_installer: "Descargar Instalador", 
+btn_python: "Descargar Archivo Python iOS/Android", 
+btn_readme: "Descargar README", 
+badge_platform: "Windows / Mobile",
 about_title: "¿Qué es?", about_text: "Software para UTAU.", adachi_box: "CSM",
 usecase_title: "Usos", uc_1: "Voz inanimada", uc_2: "Sin grabación", uc_3: "Investigación", uc_4: "Prototipos", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Uso", step_1: "Descargar", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Iniciar", step_4: "Exportar", step_4_note: "· Pronto",
@@ -964,7 +974,12 @@ fr: {
 title: "Utaun - Générateur CV pour Windows & Mobile",
 navHome: "Accueil", navGuide: "Interface", navHistory: "Historique",
 hero_desc: "Générateur CV UTAU avec synthèse CSM.",
-dl_title: "Télécharger", btn_zip: "ZIP", btn_installer: "Installateur", btn_python: "Télécharger le fichier Python iOS/Android", btn_readme: "README", badge_platform: "Windows / Mobile",
+dl_title: "Télécharger", 
+btn_zip: "Télécharger ZIP", 
+btn_installer: "Télécharger l'installateur", 
+btn_python: "Télécharger le fichier Python iOS/Android", 
+btn_readme: "Télécharger README", 
+badge_platform: "Windows / Mobile",
 about_title: "Qu'est-ce que c'est", about_text: "Logiciel UTAU.", adachi_box: "CSM",
 usecase_title: "Cas", uc_1: "Inanimé", uc_2: "Sans enregistrement", uc_3: "Recherche", uc_4: "Prototypage", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Manuel", step_1: "Télécharger", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Lancer", step_4: "Exporter", step_4_note: "· Bientôt",
@@ -979,7 +994,12 @@ it: {
 title: "Utaun - Generatore CV per Windows & Mobile",
 navHome: "Home", navGuide: "Interfaccia", navHistory: "Cronologia",
 hero_desc: "Generatore CV UTAU con sintesi CSM.",
-dl_title: "Scarica", btn_zip: "ZIP", btn_installer: "Installer", btn_python: "Scarica file Python iOS/Android", btn_readme: "README", badge_platform: "Windows / Mobile",
+dl_title: "Scarica", 
+btn_zip: "Scarica ZIP", 
+btn_installer: "Scarica Installer", 
+btn_python: "Scarica file Python iOS/Android", 
+btn_readme: "Scarica README", 
+badge_platform: "Windows / Mobile",
 about_title: "Cos'è", about_text: "Software UTAU.", adachi_box: "CSM",
 usecase_title: "Usi", uc_1: "Inanimato", uc_2: "Senza registrazione", uc_3: "Ricerca", uc_4: "Prototipi", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Uso", step_1: "Scarica", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Avvia", step_4: "Esporta", step_4_note: "· Presto",
@@ -994,7 +1014,12 @@ de: {
 title: "Utaun - CV-Voicebank-Generator für Windows & Mobile",
 navHome: "Startseite", navGuide: "UI", navHistory: "Verlauf",
 hero_desc: "CV-Generator für UTAU mit CSM-Synthese.",
-dl_title: "Herunterladen", btn_zip: "ZIP", btn_installer: "Installer", btn_python: "iOS/Android Python-Datei herunterladen", btn_readme: "README", badge_platform: "Windows / Mobile",
+dl_title: "Herunterladen", 
+btn_zip: "ZIP herunterladen", 
+btn_installer: "Installer herunterladen", 
+btn_python: "iOS/Android Python-Datei herunterladen", 
+btn_readme: "README herunterladen", 
+badge_platform: "Windows / Mobile",
 about_title: "Über Utaun", about_text: "UTAU Software.", adachi_box: "CSM",
 usecase_title: "Anwendungen", uc_1: "Unbelebt", uc_2: "Ohne Aufnahme", uc_3: "Forschung", uc_4: "Prototypen", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Handhabung", step_1: "Download", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Starten", step_4: "Exportieren", step_4_note: "· Bald",
@@ -1009,7 +1034,12 @@ pl: {
 title: "Utaun - Generator CV dla Windows i Mobile",
 navHome: "Strona główna", navGuide: "UI", navHistory: "Historia",
 hero_desc: "Generator CV dla UTAU z syntezą CSM.",
-dl_title: "Pobierz", btn_zip: "ZIP", btn_installer: "Instalator", btn_python: "Pobierz plik Python iOS/Android", btn_readme: "README", badge_platform: "Windows / Mobile",
+dl_title: "Pobierz", 
+btn_zip: "Pobierz ZIP", 
+btn_installer: "Pobierz instalator", 
+btn_python: "Pobierz plik Python iOS/Android", 
+btn_readme: "Pوبierz README", 
+badge_platform: "Windows / Mobile",
 about_title: "O programie", about_text: "Oprogramowanie UTAU.", adachi_box: "CSM",
 usecase_title: "Zastosowania", uc_1: "Martwy głos", uc_2: "Bez nagrywania", uc_3: "Badania", uc_4: "Prototypy", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Użycie", step_1: "Pobierz", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Uruchom", step_4: "Eksport", step_4_note: "· Wkrótce",
@@ -1024,14 +1054,19 @@ tr: {
 title: "Utaun - Windows ve Mobil için CV Ses Bankası",
 navHome: "Ana Sayfa", navGuide: "UI", navHistory: "Geçmiş",
 hero_desc: "CSM sentezi ile UTAU için CV oluşturucu.",
-dl_title: "İndir", btn_zip: "ZIP", btn_installer: "Yükleyici", btn_python: "iOS/Android Python Dosyasını İndir", btn_readme: "README", badge_platform: "Windows / Mobil",
+dl_title: "İndir", 
+btn_zip: "ZIP'i İndir", 
+btn_installer: "Yükleyiciyi İndir", 
+btn_python: "iOS/Android Python Dosyasını İndir", 
+btn_readme: "README'yi İndir", 
+badge_platform: "Windows / Mobil",
 about_title: "Hakkında", about_text: "UTAU yazılımı.", adachi_box: "CSM",
 usecase_title: "Kullanım", uc_1: "Cansız", uc_2: "Kayıtsiz", uc_3: "Araştırma", uc_4: "Prototip", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Nasıl", step_1: "İndir", step_2_installer: "Windows", step_2_zip: "Mobil", step_3: "Başlat", step_4: "Dışa aktar", step_4_note: "· Yakında",
-terms_title: "Koşullar", terms_body_1: "Çekirdek", terms_body_2: "Açık kaynak.", terms_body_copyright_title: "· Telif", terms_body_copyright_desc: "SiveProject", terms_body_prohibit_title: "· Yasak", terms_body_prohibit_list: "Ticari", terms_body_rule_title: "· Kurallar", terms_body_rule_desc: "Yerel", terms_body_warning_title: "Uyarı", terms_body_warning_desc: "GitHub", terms_body_4: "Çıktılar", terms_body_5: "readme.txt", terms_effective_date: "2026",
+terms_title: "Koşullar", terms_body_1: "Çekirdek", terms_body_2: "Açık kaynak.", terms_body_copyright_title: "· Telif", terms_body_copyright_desc: "SiveProject", terms_body_prohibit_title: "· Yasak", terms_body_prohibit_list: "Ticari", terms_body_rule_title: "· Kurallar", terms_body_rule_desc: "Yerel", terms_body_warning_title: "· Uyarı", terms_body_warning_desc: "GitHub", terms_body_4: "Çıktılar", terms_body_5: "readme.txt", terms_effective_date: "2026",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
 discord_title: "Discord", discord_desc: "Katıl", discord_link: "Discord →",
-github_issue_title: "Issues", github_issue_desc: "Sorunlar", github_issue_link: "Issues →",
+github_issue_title: "Issues", discord_desc: "Sorunlar", github_issue_link: "Issues →",
 report_items_title: "İçerik:", report_item_1: "OS", report_item_2: "Sürüm", report_item_3: "Adımlar", report_item_4: "Hata",
 btn_github: "View on GitHub"
 },
@@ -1039,11 +1074,16 @@ vi: {
 title: "Utaun - Trình tạo CV cho Windows & Mobile",
 navHome: "Trang chủ", navGuide: "UI", navHistory: "Lịch sử",
 hero_desc: "Trình tạo CV UTAU với tổng hợp CSM.",
-dl_title: "Tải xuống", btn_zip: "ZIP", btn_installer: "Cài đặt", btn_python: "Tải tệp Python iOS/Android", btn_readme: "README", badge_platform: "Windows / Mobile",
+dl_title: "Tải xuống", 
+btn_zip: "Tải xuống ZIP", 
+btn_installer: "Tải xuống trình cài đặt", 
+btn_python: "Tải tệp Python iOS/Android", 
+btn_readme: "Tải xuống README", 
+badge_platform: "Windows / Mobile",
 about_title: "Giới thiệu", about_text: "Phần mềm UTAU.", adachi_box: "CSM",
 usecase_title: "Trường hợp", uc_1: "Vô tri", uc_2: "Không ghi âm", uc_3: "Nghiên cứu", uc_4: "Mẫu", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Cách dùng", step_1: "Tải", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Chạy", step_4: "Xuất", step_4_note: "· Sớm có",
-terms_title: "Điều khoản", terms_body_1: "Lõi", terms_body_2: "Mã nguồn mở.", terms_body_copyright_title: "· Bản quyền", terms_body_copyright_desc: "SiveProject", terms_body_prohibit_title: "· Cấm", terms_body_prohibit_list: "Thương mại", terms_body_rule_title: "· Quy tắc", terms_body_rule_desc: "Cục bộ", terms_body_warning_title: "Cảnh báo", terms_body_warning_desc: "GitHub", terms_body_4: "Đầu ra", terms_body_5: "readme.txt", terms_effective_date: "2026",
+terms_title: "Điều khoản", terms_body_1: "Lõi", terms_body_2: "Mã nguồn mở.", terms_body_copyright_title: "· Bản quyền", terms_body_copyright_desc: "SiveProject", terms_body_prohibit_title: "· Cấm", terms_body_prohibit_list: "Thương mại", terms_body_rule_title: "· Quy tắc", terms_body_rule_desc: "Cục bộ", terms_body_warning_title: "· Cảnh báo", terms_body_warning_desc: "GitHub", terms_body_4: "Đầu ra", terms_body_5: "readme.txt", terms_effective_date: "2026",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
 discord_title: "Discord", discord_desc: "Tham gia", discord_link: "Discord →",
 github_issue_title: "Issues", github_issue_desc: "Lỗi", github_issue_link: "Issues →",
@@ -1054,11 +1094,16 @@ fil: {
 title: "Utaun - CV Generator para sa Windows & Mobile",
 navHome: "Tahanan", navGuide: "UI", navHistory: "Kasaysayan",
 hero_desc: "CV generator para sa UTAU na may CSM synthesis.",
-dl_title: "I-download", btn_zip: "ZIP", btn_installer: "Installer", btn_python: "I-download ang iOS/Android Python File", btn_readme: "README", badge_platform: "Windows / Mobile",
+dl_title: "I-download", 
+btn_zip: "I-download ang ZIP", 
+btn_installer: "I-download ang Installer", 
+btn_python: "I-download ang iOS/Android Python File", 
+btn_readme: "I-download ang README", 
+badge_platform: "Windows / Mobile",
 about_title: "Tungkol", about_text: "UTAU software.", adachi_box: "CSM",
 usecase_title: "Gamit", uc_1: "Walang buhay", uc_2: "Walang record", uc_3: "Pananaliksik", uc_4: "Prototipo", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "Gabay", step_1: "I-download", step_2_installer: "Windows", step_2_zip: "Mobile", step_3: "Simulan", step_4: "I-export", step_4_note: "· Malapit na",
-terms_title: "Tuntunin", terms_body_1: "Core", terms_body_2: "Open source.", terms_body_copyright_title: "· Copyright", terms_body_copyright_desc: "SiveProject", terms_body_prohibit_title: "· Bawal", terms_body_prohibit_list: "Komersyal", terms_body_rule_title: "· Patakaran", terms_body_rule_desc: "Lokal", terms_body_warning_title: "Babala", terms_body_warning_desc: "GitHub", terms_body_4: "Awput", terms_body_5: "readme.txt", terms_effective_date: "2026",
+terms_title: "Tuntunin", terms_body_1: "Core", terms_body_2: "Open source.", terms_body_copyright_title: "· Copyright", terms_body_copyright_desc: "SiveProject", terms_body_prohibit_title: "· Bawal", terms_body_prohibit_list: "Komersyal", terms_body_rule_title: "· Patakaran", terms_body_rule_desc: "Lokal", terms_body_warning_title: "· Babala", terms_body_warning_desc: "GitHub", terms_body_4: "Awput", terms_body_5: "readme.txt", terms_effective_date: "2026",
 mirror_title: "", mirror_desc: "", m_1: "", m_2: "", m_3: "", m_4: "", m_5: "",
 discord_title: "Discord", discord_desc: "Sumali", discord_link: "Discord →",
 github_issue_title: "Issues", github_issue_desc: "Mga Isyu", github_issue_link: "Issues →",
@@ -1069,7 +1114,12 @@ th: {
 title: "Utaun - โปรแกรมสร้าง CV สำหรับ Windows & Mobile",
 navHome: "หน้าแรก", navGuide: "หน้าจอ UI", navHistory: "ประวัติ",
 hero_desc: "โปรแกรมสร้าง CV สำหรับ UTAU ด้วย CSM synthesis",
-dl_title: "ดาวน์โหลด", btn_zip: "ZIP", btn_installer: "ตัวติดตั้ง", btn_python: "ดาวน์โหลดไฟล์ Python สำหรับ iOS/Android", btn_readme: "README", badge_platform: "Windows / มือถือ",
+dl_title: "ดาวน์โหลด", 
+btn_zip: "ดาวน์โหลด ZIP", 
+btn_installer: "ดาวน์โหลดตัวติดตั้ง", 
+btn_python: "ดาวน์โหลดไฟล์ Python สำหรับ iOS/Android", 
+btn_readme: "ดาวน์โหลด README", 
+badge_platform: "Windows / มือถือ",
 about_title: "เกี่ยวกับ", about_text: "ซอฟต์แวร์ UTAU", adachi_box: "CSM",
 usecase_title: "การใช้งาน", uc_1: "ไม่มีชีวิต", uc_2: "ไม่ต้องบันทึกเสียง", uc_3: "วิจัย", uc_4: "ต้นแบบ", uc_5: "Vocaloid", uc_6: "OtoMAD",
 manual_title: "วิธีใช้", step_1: "ดาวน์โหลด", step_2_installer: "Windows", step_2_zip: "มือถือ", step_3: "เปิด", step_4: "ส่งออก", step_4_note: "· เร็วๆ นี้",
